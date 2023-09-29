@@ -1,0 +1,28 @@
+.single-treatment{
+	.entry{
+		margin-bottom: 50px;
+	}
+	.list-doctor{
+		margin-bottom: 50px;
+	}
+	.list-treatment{
+		margin-bottom: 50px;
+		.inner{
+			background: #E6F3ED;
+			&:hover{
+				background-color: $lingt;
+				box-shadow: 0 0 15px rgba($color: #048449, $alpha: 0.2);
+			}
+		}
+	}
+	.list-post-author{
+		margin-bottom: 50px;
+		.post{
+			margin-bottom: 12px;
+		}
+		.post-thumbnail{
+			aspect-ratio: 230/139;
+			margin-bottom: 16px;
+		}
+	}
+}

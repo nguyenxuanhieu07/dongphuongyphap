@@ -1,0 +1,61 @@
+.page-slider {
+	background: $green;
+	height: 250px;
+	margin-bottom: 50px;
+}
+
+.page-title {
+	font-size: 32px;
+	color: $green;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.list-treatment {
+	.item-treatment {
+		margin-bottom: 24px;
+	}
+
+	.inner {
+		padding: 33px 19px;
+		border-radius: 10px;
+		background: #FAFAFB;
+		text-align: center;
+		height: 100%;
+
+		img {
+			max-width: 83px;
+			height: 68px;
+			margin-bottom: 8px;
+		}
+
+		&-title {
+			font-size: 16px;
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.archive-title {
+	font-size: 28px;
+	font-weight: 700;
+	position: relative;
+	padding-left: 12px;
+	margin-bottom: 16px;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 20px;
+		background: $green;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+.archive-treatment{
+	.list-doctor{
+		margin-bottom: 50px;
+	}
+}

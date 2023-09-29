@@ -1,0 +1,75 @@
+.form-rigister {
+	padding: 16px;
+	border: 1px solid $green;
+	border-radius: 10px;
+
+	.form-title {
+		font-size: 20px;
+		color: $green;
+		font-family: 'nunitosan-extrabold';
+		text-transform: uppercase;
+		margin-bottom: 13px;
+	}
+
+	.form-desc {
+		font-size: 16px;
+		line-height: 1.5;
+		font-family: 'nunitosan-semmibold';
+		margin-bottom: 24px;
+	}
+
+	.form-lable {
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	.control-custom {
+		border-radius: 10px;
+		background: #F5F5F7;
+
+		&:focus {
+			border: 1px solid $green;
+			box-shadow: none;
+			background: $lingt;
+		}
+
+		&::placeholder {
+			font-size: 16px;
+			color: #B7B9BC;
+		}
+	}
+	.btn-send{
+		background: $green;
+		color: $lingt;
+		font-weight: 700;
+		font-size: 16px;
+		border-radius: 10px;
+	}
+	.form-doctor{
+		text-align: center;
+		margin-bottom: 24px;
+		.form-img{
+			height: 169px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			margin: 0 auto 8px auto;
+			display: block;
+		}
+		.doctor-name{
+			font-size: 18px;
+			margin-bottom: 8px;
+			.link{
+				font-weight: 700;
+				color: $green;
+			}
+		}
+		.meta-item{
+			margin-bottom: 0;
+		}
+	}
+	.form-check-custom{
+		padding: 10px;
+		background: #F5F5F7;
+		border-radius: 10px;
+	}
+}

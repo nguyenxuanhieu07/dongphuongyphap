@@ -1,0 +1,18 @@
+.page-acupuncture-points{
+	.breadcrumb{
+		margin-bottom: 50px;
+	}
+	.list-alphabet{
+		list-style: none;
+		display: flex;
+		background: #E6F3ED;
+		border-radius: 10px;
+		padding: 16px 24px;
+		justify-content: space-between;
+		margin-bottom: 16px;
+		.link{
+			font-weight: 18px;
+			font-family: 'nunitosan-extrabold';
+		}
+	}
+}

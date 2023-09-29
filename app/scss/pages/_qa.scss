@@ -1,0 +1,62 @@
+.page-qa {
+	.breadcrumb {
+		margin-bottom: 50px;
+	}
+
+	.page-title {
+		margin-bottom: 16px;
+	}
+
+	#accordion {
+		margin-bottom: 65px;
+	}
+
+	.card {
+		padding: 16px;
+		background: #F5F5F7;
+		border: 10px;
+		margin-bottom: 16px;
+
+		&-header {
+			padding-left: 0;
+			padding-bottom: 5px;
+			background: transparent;
+			border-bottom: 1px solid $green;
+			padding-right: 0;
+		}
+
+		&-body {
+			padding-left: 0;
+			padding-bottom: 0;
+			padding-right: 0;
+			padding-top: 12px;
+		}
+	}
+
+	.card-btn-text {
+		font-size: 16px;
+		font-weight: 700;
+		color: $black;
+		position: relative;
+		display: block;
+
+		&::after {
+			content: '\f107';
+			font-family: 'FontAwesome';
+			position: absolute;
+			right: 0;
+
+		}
+
+	}
+
+	.car-btn-show {
+		&::after {
+			content: '\f106';
+			font-family: 'FontAwesome';
+			position: absolute;
+			right: 0;
+
+		}
+	}
+}

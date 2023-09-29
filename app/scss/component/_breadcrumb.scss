@@ -1,0 +1,11 @@
+.breadcrumb{
+	background: #E6F3ED;
+	margin-bottom: 0;
+	.item{
+		&:first-child{
+			.breadcrumb-link{
+				color: $green;
+			}
+		}
+	}
+}

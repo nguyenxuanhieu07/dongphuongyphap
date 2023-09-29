@@ -1,0 +1,117 @@
+.page-communications {
+	.breadcrumb {
+		margin-bottom: 50px;
+	}
+
+	.info-meta {
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.info-text {
+			margin-bottom: 5px;
+		}
+	}
+
+	.link-number-phone {
+		font-size: 26px;
+		font-weight: 700;
+		background: #E6F3ED;
+		border-radius: 50px;
+		padding: 10px 31px;
+
+		.fa-phone {
+			color: $green;
+			margin-right: 10px;
+		}
+	}
+
+	.list-date {
+		display: flex;
+		align-items: center;
+	}
+
+	.date-item {
+		width: 54px;
+		height: 54px;
+		padding: 8px 0;
+		border: 1px solid #707070;
+		border-radius: 5px;
+		text-align: center;
+		cursor: pointer;
+
+		.item-title {
+			margin-bottom: 0;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.item-text {
+			font-size: 10px;
+			color: #B7B9BC;
+			margin-bottom: 0;
+		}
+
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
+
+		&:hover {
+			border: 1px solid $green;
+			color: $green;
+		}
+	}
+
+	.list-time {
+		display: flex;
+
+		.date-item {
+			width: 62px;
+			height: 38px;
+			padding: 8px 0;
+			margin-bottom: 8px;
+		}
+	}
+
+	.active {
+		border: 1px solid $green;
+		color: $green;
+	}
+	.google-map{
+		margin-bottom: 0;
+		height: 450px;
+		iframe{
+			border-radius: 0;
+		}
+	}
+}
+
+.communications-form {
+	margin-bottom: 50px;
+	padding: 24px 26px;
+	border: 1px solid #E5E7EB;
+
+	.form-title {
+		text-transform: none;
+		margin-bottom: 0;
+	}
+
+	.form-desc {
+		margin-bottom: 20px;
+	}
+
+	.form-group {
+		&:last-child {
+			margin-bottom: 36px;
+		}
+	}
+
+	.btn-send {
+		background: #F2A82F;
+
+		&:hover {
+			background: $green;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.archive-doctors{
+	.page-title{
+		text-transform: uppercase;
+		color: $lingt;
+		padding-top: 100px;
+		.title-child{
+			display: block;
+			text-transform: none;
+			font-weight: 500;
+		}
+	}
+	.entry{
+		margin-bottom: 24px;
+	}
+	.list-doctor{
+		margin-bottom: 65px;
+	}
+}
+.list-numbers{
+	margin-bottom: 50px;
+	text-align: center;
+	.numbers-text{
+		font-size: 28px;
+		font-weight: 700;
+		font-size: 28px;
+		margin-bottom: 0;
+	}
+	.numbers-title{
+		font-weight: 700;
+		color: $green;
+		font-size: 80px;
+		margin-bottom: 0;
+		line-height: 1.1;
+	}
+}

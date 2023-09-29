@@ -1,0 +1,26 @@
+.archive-products{
+	.archive-title{
+		text-transform: uppercase;
+		margin-bottom: 17px;
+	}
+	.list-products{
+		margin-bottom: 50px;
+	}
+	.breadcrumb{
+		margin-bottom: 0;
+	}
+}
+.page-action{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+.archive-more{
+	font-size: 16px;
+	font-weight: 700;
+	color: $green;
+	padding: 5px 10px;
+	background: #E6F3ED;
+	border-radius: 10px;
+	display: block;
+}

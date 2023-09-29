@@ -1,0 +1,27 @@
+// variable
+@import "variable/variable";
+// global
+@import "global";
+//component
+@import 'component/post';
+@import 'component/form-sidebar';
+@import 'component/breadcrumb';
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/cta";
+//pages
+@import "pages/homepage";
+@import "pages/archive-treatment";
+@import "pages/single-treatment";
+@import "pages/page-basis";
+@import "pages/archive-products";
+@import "pages/taxonomy-product";
+@import "pages/single-product";
+@import "pages/archive-doctors";
+@import "pages/single-doctor";
+@import "pages/archive-technicians";
+@import "pages/qa";
+@import "pages/page-communications";
+@import "pages/page-activity-news";
+@import "pages/page-acupuncture-points";
