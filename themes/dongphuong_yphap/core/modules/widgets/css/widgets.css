@@ -1,0 +1,8 @@
+.widgets-show-images img.widgets-thumb {
+	width: 70px;
+	aspect-ratio: 1;
+	margin: 5px;
+	object-fit: cover;
+	object-position: 50% 50%;
+	-o-object-position: 50% 50%;
+}
