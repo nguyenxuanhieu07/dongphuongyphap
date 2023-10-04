@@ -1,0 +1,11 @@
+@mixin cover_image($width, $height) {
+	object-fit: cover;
+	o-object-fit: cover;
+	width: $width;
+	height: $height;
+}
+
+@mixin cover_image_format() {
+	object-fit: cover;
+	o-object-fit: cover;
+}

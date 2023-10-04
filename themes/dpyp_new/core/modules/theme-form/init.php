@@ -1,0 +1,167 @@
+<?php
+
+if( !function_exists('form_dat_lich')){
+	function form_dat_lich(){
+		$option_name = 'option_form';
+
+		$google_action = rwmb_meta( 'google-form-action', array( 'object_type' => 'setting' ), $option_name );
+		$entry_fullname = rwmb_meta( 'google-form-entry-fullname', array( 'object_type' => 'setting' ), $option_name );
+		$entry_numberphone = rwmb_meta( 'google-form-entry-numberphone', array( 'object_type' => 'setting' ), $option_name );
+		$entry_email = rwmb_meta( 'google-form-entry-email', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_service = rwmb_meta( 'google-form-entry-service', array( 'object_type' => 'setting' ), $option_name );
+		$entry_office = rwmb_meta( 'google-form-entry-office', array( 'object_type' => 'setting' ), $option_name );
+		$entry_date = rwmb_meta( 'google-form-entry-date', array( 'object_type' => 'setting' ), $option_name );
+		$entry_content = rwmb_meta( 'google-form-entry-content', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_data_url = rwmb_meta( 'google-form-entry-url', array( 'object_type' => 'setting' ), $option_name );
+		$entry_data_referer_url = rwmb_meta( 'google-form-entry-referer-url', array( 'object_type' => 'setting' ), $option_name );
+		
+		$fields = array(
+			$entry_fullname => $_POST["fullname"],
+			$entry_numberphone => $_POST["phone"],
+			$entry_email => $_POST["email"],
+
+			$entry_service => $_POST["service"],
+			$entry_office => $_POST["office"],
+			$entry_date => $_POST["date"],
+			$entry_content => $_POST["content"],
+
+			$entry_data_url => $_POST["data_url"],
+			$entry_data_referer_url => $_POST["data_url_refer"]
+		);
+		
+		$fields_string = http_build_query($fields);
+		
+		$url = $google_action;
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_exec($curl);
+		curl_close($curl);
+		header("Refresh:0");
+		die();
+	}
+	add_action( 'wp_ajax_nopriv_form_dat_lich', 'form_dat_lich' );
+	add_action( 'wp_ajax_form_dat_lich', 'form_dat_lich' );
+}
+
+if( !function_exists('form_send_contact')){
+	function form_send_contact(){
+		$option_name = 'option_form';
+
+		$google_action = rwmb_meta( 'google-form-contact-action', array( 'object_type' => 'setting' ), $option_name );
+		$entry_fullname = rwmb_meta( 'google-form-contact-entry-fullname', array( 'object_type' => 'setting' ), $option_name );
+		$entry_numberphone = rwmb_meta( 'google-form-contact-entry-numberphone', array( 'object_type' => 'setting' ), $option_name );
+		$entry_email = rwmb_meta( 'google-form-contact-entry-email', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_subject = rwmb_meta( 'google-form-contact-entry-subject', array( 'object_type' => 'setting' ), $option_name );
+		$entry_content = rwmb_meta( 'google-form-contact-entry-content', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_data_url = rwmb_meta( 'google-form-contact-entry-url', array( 'object_type' => 'setting' ), $option_name );
+		$entry_data_referer_url = rwmb_meta( 'google-form-contact-entry-referer-url', array( 'object_type' => 'setting' ), $option_name );
+		
+		$fields = array(
+			$entry_fullname => $_POST["fullname"],
+			$entry_numberphone => $_POST["phone"],
+			$entry_email => $_POST["email"],
+			$entry_subject => $_POST["subject"],
+			$entry_content => $_POST["content"],
+
+			$entry_data_url => $_POST["data_url"],
+			$entry_data_referer_url => $_POST["data_url_refer"]
+		);
+		
+		$fields_string = http_build_query($fields);
+		
+		$url = $google_action;
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_exec($curl);
+		curl_close($curl);
+		header("Refresh:0");
+		die();
+	}
+	add_action( 'wp_ajax_nopriv_form_send_contact', 'form_send_contact' );
+	add_action( 'wp_ajax_form_send_contact', 'form_send_contact' );
+}
+
+if( !function_exists('form_send_sidebar')){
+	function form_send_sidebar(){
+		$option_name = 'option_form';
+
+		$google_action = rwmb_meta( 'google-form-sidebar-action', array( 'object_type' => 'setting' ), $option_name );
+		$entry_fullname = rwmb_meta( 'google-form-sidebar-entry-fullname', array( 'object_type' => 'setting' ), $option_name );
+		$entry_numberphone = rwmb_meta( 'google-form-sidebar-entry-numberphone', array( 'object_type' => 'setting' ), $option_name );
+		$entry_email = rwmb_meta( 'google-form-sidebar-entry-email', array( 'object_type' => 'setting' ), $option_name );
+		
+		$entry_category = rwmb_meta( 'google-form-sidebar-entry-category', array( 'object_type' => 'setting' ), $option_name );
+		$entry_content = rwmb_meta( 'google-form-sidebar-entry-content', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_data_url = rwmb_meta( 'google-form-sidebar-entry-url', array( 'object_type' => 'setting' ), $option_name );
+		$entry_data_referer_url = rwmb_meta( 'google-form-sidebar-entry-referer-url', array( 'object_type' => 'setting' ), $option_name );
+		
+		$fields = array(
+			$entry_fullname => $_POST["fullname"],
+			$entry_numberphone => $_POST["phone"],
+			$entry_email => $_POST["email"],
+			$entry_category => $_POST["category"],
+			$entry_content => $_POST["content"],
+
+			$entry_data_url => $_POST["data_url"],
+			$entry_data_referer_url => $_POST["data_url_refer"]
+		);
+		
+		$fields_string = http_build_query($fields);
+		
+		$url = $google_action;
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_exec($curl);
+		curl_close($curl);
+		header("Refresh:0");
+		die();
+	}
+	add_action( 'wp_ajax_nopriv_form_send_sidebar', 'form_send_sidebar' );
+	add_action( 'wp_ajax_form_send_sidebar', 'form_send_sidebar' );
+}
+
+if( !function_exists('form_send_footer')){
+	function form_send_footer(){
+		$option_name = 'option_form';
+
+		$google_action = rwmb_meta( 'google-form-footer-action', array( 'object_type' => 'setting' ), $option_name );
+		$entry_fullname = rwmb_meta( 'google-form-footer-entry-fullname', array( 'object_type' => 'setting' ), $option_name );
+		$entry_numberphone = rwmb_meta( 'google-form-footer-entry-numberphone', array( 'object_type' => 'setting' ), $option_name );
+
+		$entry_data_url = rwmb_meta( 'google-form-footer-entry-url', array( 'object_type' => 'setting' ), $option_name );
+		$entry_data_referer_url = rwmb_meta( 'google-form-footer-entry-referer-url', array( 'object_type' => 'setting' ), $option_name );
+		
+		$fields = array(
+			$entry_fullname => $_POST["fullname"],
+			$entry_numberphone => $_POST["phone"],
+
+			$entry_data_url => $_POST["data_url"],
+			$entry_data_referer_url => $_POST["data_url_refer"]
+		);
+		
+		$fields_string = http_build_query($fields);
+		
+		$url = $google_action;
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_exec($curl);
+		curl_close($curl);
+		header("Refresh:0");
+		die();
+	}
+	add_action( 'wp_ajax_nopriv_form_send_footer', 'form_send_footer' );
+	add_action( 'wp_ajax_form_send_footer', 'form_send_footer' );
+}

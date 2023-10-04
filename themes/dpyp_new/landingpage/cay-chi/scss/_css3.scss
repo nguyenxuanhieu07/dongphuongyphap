@@ -1,0 +1,13 @@
+@mixin border_radius_style($radius) {
+	border-radius: $radius;
+	-o-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin rotate_style($rotate) {
+	transform: rotate($rotate);
+	-o-transform: rotate($rotate);
+	-moz-transform: rotate($rotate);
+	-webkit-transform: rotate($rotate);
+}

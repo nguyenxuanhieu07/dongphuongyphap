@@ -1,0 +1,352 @@
+/*!
+Theme Name: DPYP
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: dpyp
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+DPYP is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+.embed-responsive .rll-youtube-player {
+	margin-top: -56.23%;
+}
+.kk-star-ratings {
+	flex-wrap: wrap;
+}
+.kk-star-ratings .kksr-stars{
+	width: 100%;
+}
+.single-post-meta .review .kk-star-ratings .kksr-legend {
+	margin: 5px 0;
+}
+.kk-star-ratings .kksr-muted {
+	opacity: 1;
+}
+.office-contact .title {
+	color: #056839;
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.live-chat-messenger {
+	z-index: 10;
+	left: 15px;
+	right: auto;
+	bottom: 120px;
+}
+.page-footer {
+	padding-bottom: 50px;
+}
+.dat-lich-footer .fs-0{
+	font-size: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.live-chat-messenger a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url('images/icon-messenger.png') no-repeat center;
+	background-size: 100%;
+}
+
+.doctor-card {
+	padding: 0 10px;
+}
+
+.title-doctor {
+	font-size: 24px;
+	font-weight: 700;
+	color: #056839;
+	margin-bottom: 25px;
+	padding-bottom: 8px;
+	position: relative;
+}
+
+body.single-doctor .breadcrumb-nav .breadcrumb {
+	justify-content: left;
+	padding: 0;
+	border-bottom: 1px dashed #ccc;
+	padding-bottom: 5px;
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+.office p.numberphone {
+	margin-bottom: 8px;
+}
+
+#btn-to-top{
+	bottom: 60px;
+}
+
+.list-addthis .slick-arrow::before {
+	font-size: 20px;
+	background: #fff;
+	opacity: 1;
+	width: 15px;
+	height: 20px;
+	display: block;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.list-addthis .post-title a {
+	color: #fff;
+	display: block;
+}
+
+.category-2 {
+	margin-bottom: 30px;
+}
+
+.category-1 .post-title {
+	min-height: 70px;
+	text-overflow: clip;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.video-news .post-thumbnail {
+	height: 215px;
+}
+
+.partner-logo .partner-name {
+	text-align: center;
+	display: block;
+	font-weight: 500;
+	margin-top: 8px;
+	line-height: 1.2;
+	color: #000;
+	font-size: 16px;
+	padding: 5px
+}
+
+.home-partner {
+	padding-bottom: 20px;
+}
+
+.home-partner .partner-logo img {
+	max-height: 70px;
+}
+
+.heal .child-cat {
+	display: flex;
+	list-style: none;
+	margin-bottom: 0;
+	align-items: center;
+}
+.heal .child-cat li {
+	font-weight: 700;
+	margin: 0 10px;
+	margin-left: 10px;
+	display: inline-block;
+	position: relative;
+}
+.heal .widget-title {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+.heal .widget-header {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.heal .view-all{
+	bottom: auto;
+	top: 10px;
+}
+
+.home-gallery .thumbnail-gallery {
+	height: 210px;
+}
+
+.home-gallery .thumbnail-gallery img {
+	object-fit: cover;
+	object-position: 50% 50%;
+	-o-object-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.circle-hotline {
+	bottom: 160px;
+	left: 20px;
+	box-shadow: none;
+	height: 35px;
+	width: 35px;
+	line-height: 35px;
+}
+
+.circle-hotline .icon {
+	font-size: 18px;
+}
+
+.list-addthis .post .post-title a:hover {
+	color: #252423;
+}
+
+.home-system .widget-content a {
+	color: #986a00;
+	font-weight: 500;
+}
+
+.sub-featured ul {
+	background: #0a6e40;
+	color: #fff;
+}
+
+.sub-featured ul li a.dropdown-item {
+	color: #fff !important;
+	font-weight: 500;
+}
+
+.sub-featured ul li a.dropdown-item:hover {
+	color: #feca52 !important;
+}
+
+.heal .btn-viewmore {
+	border-radius: 30px;
+	border: 1px solid #f2a82f;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 5px 15px;
+	font-size: 13px;
+	color: #fff;
+	background: #f2a82f;
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.live-chat-zalo {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url('images/icon-zalo.png') no-repeat center;
+	background-size: 100%;
+	z-index: 10;
+	left: 15px;
+	right: auto;
+	bottom: 70px;
+	position: fixed;
+}
+
+@media (min-width: 768px){
+	#section-2 .post-title,#section-3 .post-title {
+		height: 50px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+}
+
+@media (max-width: 1366px){
+	.home-slide {
+		min-height: 400px;
+	}
+}
+
+@media (max-width: 768px){
+	.heal .child-cat{
+		white-space: nowrap;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		padding: 5px;
+		margin-top: 10px;
+	}
+
+	.home-gallery .thumbnail-gallery {
+		height: 150px;
+	}
+}
+
+@media (max-width: 575px){
+
+	.heal .view-all {
+		display: none;
+	}
+
+	.home-kol .title-featured p {
+		font-size: 16px;
+	}
+
+	.home-mix .title-home a {
+		font-size: 20px;
+	}
+
+	.slick-next{
+		right: 0;
+	}
+
+	.slick-prev{
+		left: 0;
+	}
+
+	.home-kol .big-post {
+		padding-top: 0;
+		background: none;
+	}
+
+	.title-doctor {
+		line-height: 1.5;
+	}
+
+	#btn-to-top{
+		bottom: 200px;
+	}
+
+	
+	.home-technical .description-title br, .home-educate .description-title br , .home-system .description-title br {
+		display: none;
+	}
+	.live-chat-messenger {
+		bottom: 175px;
+	}
+	.live-chat-zalo {
+		bottom: 130px;
+	}
+	.circle-hotline {
+		bottom: 210px;
+		left: 15px
+	}
+
+}
+
+@media (max-width: 415px){
+	.home-doctor .avt-doctor {
+		height: 224px;
+	}
+	.home-slide {
+		min-height: 350px;
+	}
+}
+
+@media (max-width: 375px){
+	.home-doctor .avt-doctor {
+		height: 175px;
+	}
+}
