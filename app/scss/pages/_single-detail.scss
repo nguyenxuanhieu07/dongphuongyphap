@@ -1,0 +1,49 @@
+.single-detail {
+	.breadcrumb {
+		margin-bottom: 50px;
+	}
+}
+
+.post-sapo {
+	margin-bottom: 35px;
+}
+
+.entry {
+	font-size: 16px;
+	margin-bottom: 50px;
+	h2 {
+		font-size: 28px;
+		font-weight: 700;
+		position: relative;
+		padding-left: 12px;
+		margin-bottom: 16px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 20px;
+			background: $green;
+			left: 0;
+			top: 5px;
+
+		}
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	p,
+	img,
+	h3 {
+		margin-bottom: 16px;
+	}
+	ul{
+		padding-left: 15px;
+		margin-bottom: 16px;
+		li{
+			margin-bottom: 16px;
+		}
+	}
+}

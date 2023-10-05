@@ -51,12 +51,6 @@ if( !function_exists('metabox_doctor')){
 					'type' => 'text',
 					'size' => 80
 				),
-				// array(
-				// 	'name' => 'Myspace',
-				// 	'id'   => 'dt_myspace',
-				// 	'type' => 'text',
-				// 	'size' => 80
-				// ),
 				array(
 					'name' => 'Pinterest',
 					'id'   => 'dt_pinterest',
@@ -69,12 +63,6 @@ if( !function_exists('metabox_doctor')){
 					'type' => 'text',
 					'size' => 80
 				),
-				// array(
-				// 	'name' => 'Tumblr',
-				// 	'id'   => 'dt_tumblr',
-				// 	'type' => 'text',
-				// 	'size' => 80
-				// ),
 				array(
 					'name' => 'Twitter',
 					'id'   => 'dt_twitter',

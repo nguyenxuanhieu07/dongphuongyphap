@@ -1,0 +1,85 @@
+#comments {
+	margin-bottom: 50px;
+	.comment-form {
+		margin-bottom: 30px;
+	}
+
+	.comment-section-title {
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+	}
+
+	#comment {
+		border-radius: 12px;
+		border: 1px solid #B7B9BC;
+		margin-bottom: 15px;
+	}
+
+	.submit {
+		background-color: #ffcb57;
+		border: none;
+		color: #0a6e40;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding: 8px 3.5rem;
+		cursor: pointer;
+
+		&:hover {
+			background: #324d36;
+			color: #fff;
+		}
+	}
+
+	.row-field {
+		margin-bottom: 30px;
+	}
+
+	ol {
+		list-style: none;
+	}
+
+	.avatar {
+		width: 67px;
+		aspect-ratio: 1;
+		border-radius: 12px;
+		margin-right: 15px;
+		position: absolute;
+		left: 0;
+	}
+
+	.comment-body {
+		padding-top: 19px;
+		position: relative;
+		border-bottom: 1px solid;
+		border-color: #eee;
+		background-color: transparent;
+		margin-bottom: 0;
+		padding-left: 85px;
+	}
+
+	.comment-list {
+		padding-left: 0;
+		max-height: 668px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		padding-right: 52px;
+	}
+
+	.fn {
+		margin-bottom: 12px;
+	}
+
+	.reply {
+		position: absolute;
+		right: 0;
+
+		.comment-reply-link {
+			color: $green;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+}

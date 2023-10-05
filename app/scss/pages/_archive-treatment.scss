@@ -43,6 +43,7 @@
 	position: relative;
 	padding-left: 12px;
 	margin-bottom: 16px;
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -50,12 +51,12 @@
 		height: 20px;
 		background: $green;
 		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 5px;
 	}
 }
-.archive-treatment{
-	.list-doctor{
+
+.archive-treatment {
+	.list-doctor {
 		margin-bottom: 50px;
 	}
 }

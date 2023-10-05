@@ -7,7 +7,7 @@ function meta_box_langding_page($meta_boxes)
 		'title'       => 'Cấu trúc nội dung',
 		'post_types'  => 'page',
 		'include'     => array(
-			'template' => array('template-pages/solution-therapy.php', 'template-pages/solution-product.php', 'template-pages/solution-motor.php', 'template-pages/solution-medicine.php', 'template-pages/solution-macrobiotics.php'),
+			'template' => array('template-pages/solution-therapy.php', 'template-pages/solution-product.php', 'template-pages/solution-heavy.php', 'template-pages/solution-medicine.php', 'template-pages/solution-macrobiotics.php'),
 		),
 		'tabs'        => array(
 			'logic'       => array(
@@ -226,8 +226,8 @@ function meta_box_langding_page($meta_boxes)
 				'id'          => 'role-author',
 				'type'        => 'select_advanced',
 				'options'     => array(
-					'bs'  => 'Bác sĩ',
-					'ktv' => 'Kỹ thuật viên',
+					'bs'     => 'Bác sĩ',
+					'ktv'    => 'Kỹ thuật viên',
 					'editor' => 'Biên tập viên'
 				),
 			),
@@ -295,6 +295,105 @@ function meta_box_langding_page($meta_boxes)
 						),
 					),
 				),
+			),
+		),
+	);
+	$meta_boxes[] = array(
+		'id'          => 'page-basis-meta',
+		'title'       => 'Cấu trúc nội dung',
+		'post_types'  => 'page',
+		'include'     => array(
+			'template' => array('template-pages/page-basis.php'),
+		),
+		'tabs'        => array(
+			'general'        => array(
+				'label' => 'Giới thiệu',
+				'icon'  => 'dashicons-editor-paste-text',
+			),
+			'infrastructure' => array(
+				'label' => 'Cơ sở vật chất',
+				'icon'  => 'dashicons-buddicons-topics',
+			),
+			'evaluate'       => array(
+				'label' => 'Đánh giá',
+				'icon'  => 'dashicons-star-filled',
+			),
+			'map'       => array(
+				'label' => 'Map',
+				'icon'  => 'dashicons-location',
+			),
+		),
+		'tab_style'   => 'box',
+		'tab_wrapper' => true,
+		'fields'      => array(
+			array(
+				'name' => 'Địa chỉ',
+				'id'   => 'page-basis-address',
+				'type' => 'text',
+				'tab'  => 'general'
+			),
+			array(
+				'name' => 'Số điện thoại',
+				'id'   => 'page-basis-numberphone',
+				'type' => 'text',
+				'tab'  => 'general'
+			),
+			array(
+				'name' => 'Thời gian làm việc',
+				'id'   => 'page-basis-worktime',
+				'type' => 'text',
+				'tab'  => 'general'
+			),
+			array(
+				'name' => 'Hình ảnh',
+				'id'   => 'infrastructure-images',
+				'type' => 'image_advanced',
+				'tab'  => 'infrastructure'
+			),
+			array(
+				'name'        => 'Nội dung',
+				'id'          => 'evaluate-group',
+				'type'        => 'group',
+				'clone'       => true,
+				'sort_clone'  => true,
+				'collapsible' => true,
+				'group_title' => array('field' => 'evaluate-title'),
+				'add_button'  => 'Thêm',
+				'tab'         => 'evaluate',
+				'fields'      => array(
+					array(
+						'name'             => 'Avatar',
+						'id'               => 'evaluate-images',
+						'type'             => 'image_advanced',
+						'max_file_uploads' => 1,
+					),
+					array(
+						'name' => 'Tên',
+						'id'   => 'evaluate-name',
+						'type' => 'text',
+						'size' => 50,
+					),
+					array(
+						'name' => 'Nội dung',
+						'id'   => 'evaluate-content',
+						'type' => 'text',
+						'size' => 50,
+					),
+				),
+			),
+			array(
+				'name' => 'Link Map',
+				'id'   => 'map-link',
+				'type' => 'text',
+				'size' => 50,
+				'tab'  => 'map',
+			),
+			array(
+				'name' => 'iframe Map',
+				'id'   => 'map-iframe',
+				'type' => 'textarea',
+				'size' => 50,
+				'tab'  => 'map',
 			),
 		),
 	);
