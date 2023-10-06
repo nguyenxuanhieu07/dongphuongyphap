@@ -3,11 +3,15 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 	$options  = get_option('dongphuong-theme-options');
 	$degree   = [];
 	$position = [];
-	foreach ($options['degree-group'] as $key => $value) {
-		$degree[$value['degree-group-title']] = $value['degree-group-title'];
+	if(!empty($options['degree-group'])){
+		foreach ($options['degree-group'] as $key => $value) {
+			$degree[$value['degree-group-title']] = $value['degree-group-title'];
+		}
 	}
-	foreach ($options['position-group'] as $key => $value) {
-		$position[$value['position-group-title']] = $value['position-group-title'];
+	if(!empty($options['position-group'])){
+		foreach ($options['position-group'] as $key => $value) {
+			$position[$value['position-group-title']] = $value['position-group-title'];
+		}
 	}
 	$meta_boxes[] = array(
 		'id'          => 'expert-post-meta',

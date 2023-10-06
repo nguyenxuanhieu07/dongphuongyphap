@@ -284,13 +284,57 @@ var check_out={
 		}
 	},
 }
-var form_datepicker = {
+var form_booking = {
 	init : function(){
-		var ip_date=$('.form-rigister .date-more');
+		form_booking.input_datepicker();
+		form_booking.select_date();
+		form_booking.select_time();
+	},
+	input_datepicker : function(){
+		var ip_date=$('.form-rigister .booking-date');
 		if(ip_date.length > 0){
-			//ip_date.datepicker();
+			ip_date.datepicker({
+				showButtonPanel: true,
+		        dateFormat: 'dd/mm',
+		        changeMonth: true,
+		        changeYear: false
+			});
+			$('.form-rigister .date-more').on('click',function(){
+				ip_date.trigger("select");
+			});
+			ip_date.on('change',function(){
+				$('.date-custom').remove();
+				var inp_val = $(this).val();
+				var newElement = '<div class="date-item date-custom active" data-value='+inp_val+'><p class="item-title">'+inp_val+'</p></div>';
+				$(".date-more").before(newElement);
+				$('input[name="booking-date"]').val(inp_val);
+			});
 		}
-	}
+	},
+	select_date : function(){
+		var item_date = $('.form-rigister .list-date .date-item');
+		if(item_date.length > 0){
+			$(document).on('click','.form-rigister .list-date .date-item',function(){
+				if(!$(this).hasClass('date-more')){
+					var inp_val = $(this).attr('data-value');
+					$('.form-rigister .list-date .date-item').removeClass('active');
+					$(this).toggleClass('active');
+					$('input[name="booking-date"]').val(inp_val);
+				}
+			});
+		}
+	},
+	select_time : function(){
+		var item_date = $('.form-rigister .list-time .date-item');
+		if(item_date.length > 0){
+			$(document).on('click','.form-rigister .list-time .date-item',function(){
+				var inp_val = $(this).attr('data-value');
+				$('.form-rigister .list-time .date-item').removeClass('active');
+				$(this).toggleClass('active');
+				$('input[name="booking-time"]').val(inp_val);
+			});
+		}
+	},
 }
 jQuery(document).ready(function() {
 	//slider
@@ -299,5 +343,7 @@ jQuery(document).ready(function() {
 	collpase_js.init();
 	product_action.init();
 	check_out.init();
-	form_datepicker.init();
+	form_booking.init();
+
+
 });

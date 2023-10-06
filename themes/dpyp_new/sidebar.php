@@ -10,6 +10,12 @@ if (is_category()) {
 $ngayThangHienTai = date("d/m");
 $ngayThangTiepTheo1 = date("d/m", strtotime("+1 day"));
 $ngayThangTiepTheo2 = date("d/m", strtotime("+2 days"));
+if(is_author()){
+	$check_author = 1;
+	$author = get_queried_object();
+    $author_id = $author->ID;
+	$user_name = get_user_meta($author_id,'user-name',true) ? get_user_meta($author_id,'user-name',true) : '';
+}
 ?>
 <form action="" class="form-rigister">
 	<h2 class="form-title text-center">
@@ -39,56 +45,65 @@ $ngayThangTiepTheo2 = date("d/m", strtotime("+2 days"));
 		<label class="form-lable" for="select_basis">Lựa chọn cơ sở *</label>
 		<select id="select_basis" class="form-control control-custom">
 			<option selected="">Lựa chọn cơ sở *</option>
-			<option>...</option>
+			<option value="Hà Nội">Hà Nội</option>
+			<option value="Hồ Chí Minh">Hồ Chí Minh</option>
 		</select>
 	</div>
 	<div class="form-group ">
 		<label class="form-lable" for="select_basis">Lựa chọn bác sĩ *</label>
-		<select id="select_basis" class="form-control control-custom">
+		<select id="select_basis" class="form-control control-custom" <?php if($check_author) echo 'disabled'; ?>>
+			<?php if($check_author): ?>
+				<option value="<?php echo $user_name; ?>"><?php echo $user_name; ?></option>
+			<?php else: ?>
 			<option selected="">Lựa chọn bác sĩ *</option>
 			<option>...</option>
+		<?php endif; ?>
 		</select>
 	</div>
 	<div class="form-group ">
 		<label class="form-lable">Ngày khám *</label>
 		<div class="list-date">
-			<div class="date-item">
+			<div class="date-item" data-value="<?php echo $ngayThangHienTai; ?>">
 				<p class="item-title"><?php echo $ngayThangHienTai; ?></p>
 				<p class="item-text">hôm nay</p>
 			</div>
-			<div class="date-item">
+			<div class="date-item"  data-value="<?php echo $ngayThangTiepTheo1; ?>">
 				<p class="item-title"><?php echo $ngayThangTiepTheo1; ?></p>
 				<p class="item-text">Ngày mai</p>
 			</div>
-			<div class="date-item">
+			<div class="date-item"  data-value="<?php echo $ngayThangTiepTheo2; ?>">
 				<p class="item-title"><?php echo $ngayThangTiepTheo2; ?></p>
 				<p class="item-text">Ngày kìa</p>
 			</div>
 			<div class="date-item date-more">
 				<p class="item-title">+</p>
 				<p class="item-text">Khác</p>
+				<input type="text" class="form-control booking-date">
+				<input type="text"name="booking-date" hidden >
 			</div>
+			
 		</div>
 	</div>
 	<div class="form-group ">
 		<label class="form-lable">Giờ khám *</label>
 		<div class="list-time">
-			<div class="date-item">
+			<div class="date-item" data-value="08:00">
 				<input class="form-check-input" type="radio" name="time-hours" id="raidio1" value="08:00" hidden="">
 				<label class="item-title" for="raidio1">08:00</label>
 			</div>
-			<div class="date-item">
+			<div class="date-item" data-value="08:30">
 				<input class="form-check-input" type="radio" name="time-hours" id="raidio2" value="08:30" hidden="">
 				<label class="item-title" for="raidio2">08:30</label>
 			</div>
-			<div class="date-item">
+			<div class="date-item" data-value="09:00">
 				<input class="form-check-input" type="radio" name="time-hours" id="raidio3" value="09:00" hidden="">
 				<label class="item-title" for="raidio3">09:00</label>
 			</div>
-			<div class="date-item">
+			<div class="date-item" data-value="09:30">
 				<input class="form-check-input" type="radio" name="time-hours" id="raidio4" value="09:30" hidden="">
 				<label class="item-title" for="raidio4">09:30</label>
 			</div>
+			<input type="text"name="booking-time" hidden >
 		</div>
 	</div>
 	<button type="submit" class="form-control btn-send">Gửi thông tin</button>
