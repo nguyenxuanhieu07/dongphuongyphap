@@ -410,6 +410,10 @@ a:hover {
   color: #B7B9BC;
 }
 
+.form-rigister .booking-date {
+  opacity: 0;
+}
+
 .form-rigister .btn-send {
   background: #048449;
   color: #fff;
@@ -1081,15 +1085,15 @@ a:hover {
   padding-left: 15px;
 }
 
-.footer .footer-policy .item {
+.footer .footer-policy .menu-item {
   margin-bottom: 15px;
 }
 
-.footer .footer-policy .item .footer-link {
+.footer .footer-policy .menu-item a {
   color: #333333;
 }
 
-.footer .footer-policy .item .footer-link:hover {
+.footer .footer-policy .menu-item a:hover {
   text-decoration: none;
 }
 

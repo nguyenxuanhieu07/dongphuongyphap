@@ -284,6 +284,19 @@ var check_out={
 		}
 	},
 }
+var form_booking={
+	init: function() {
+		var ip_date=$("input[name=booking-date]");
+		if(ip_date.length>0) {
+			ip_date.datepicker();
+			$('.lable-booking-date').on('click',function(){
+				ip_date.click();
+				console.log(ip_date.val());
+			});
+		}
+	},
+	
+}
 jQuery(document).ready(function() {
 	//slider
 	home_slider.init();
@@ -291,4 +304,5 @@ jQuery(document).ready(function() {
 	collpase_js.init();
 	product_action.init();
 	check_out.init();
+	form_booking.init();
 });

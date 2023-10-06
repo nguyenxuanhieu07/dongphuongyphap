@@ -24,21 +24,26 @@ if (!function_exists('theme_setup')):
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support('html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		)
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('ntn_theme_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
+		add_theme_support('custom-background', apply_filters(
+			'ntn_theme_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
 		)
-		));
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support('customize-selective-refresh-widgets');
@@ -48,12 +53,14 @@ if (!function_exists('theme_setup')):
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support('custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
 		);
 	}
 endif;
@@ -94,8 +101,8 @@ add_action('widgets_init', 'theme_widgets_init');
  */
 function theme_scripts()
 {
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.min.js?2', array(), '2', true);
+	wp_enqueue_script('jquery-min', get_template_directory_uri() . '/js/jquery.min.js', array(), '221414', true);
+	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js?2', array('jquery'), '2', true);
 	wp_localize_script('main-js', 'vmajax', array('ajaxurl' => admin_url('admin-ajax.php')));
 	// font-awesome
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
@@ -128,7 +135,6 @@ add_action('wp_head', 'add_meta_tags');
  * Add theme metabox
  */
 define('MTB_DIR', get_template_directory() . '/core/extensions/meta-box/');
-
 require_once(MTB_DIR) . 'meta-box.php';
 require_once(MTB_DIR) . 'extensions/mb-settings-page/mb-settings-page.php';
 require_once(MTB_DIR) . 'extensions/meta-box-group/meta-box-group.php';
@@ -209,11 +215,11 @@ require_once(__DIR__) . '/modules/structure/init.php';
 /**
  * User
  */
-require_once(__DIR__). '/modules/user/init.php';
+require_once(__DIR__) . '/modules/user/init.php';
 /**
  * page
  */
-require_once(__DIR__). '/modules/page/init.php';
+require_once(__DIR__) . '/modules/page/init.php';
 
 /**
  * disable block editor

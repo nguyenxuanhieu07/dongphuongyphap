@@ -105,6 +105,13 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 				),
 			),
 			array(
+				'name' => 'Họ tên',
+				'id'   => 'user-name',
+				'type' => 'text',
+				'size' => 30,
+				'tab'  => 'general',
+			),
+			array(
 				'name' => 'Số năm kinh nghiệm',
 				'id'   => 'user-exp',
 				'type' => 'number',

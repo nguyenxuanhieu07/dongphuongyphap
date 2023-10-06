@@ -9,113 +9,102 @@
  * @package DPYP
  */
 
-$settings = get_option( 'option_form' );
+$settings = get_option('option_form');
 
-$fb_link = ( $settings['footer_facebook'] != null ) ? $settings['footer_facebook'] : "#";
+$fb_link = ($settings['footer_facebook'] != null) ? $settings['footer_facebook'] : "#";
 
 $ins_link = $settings['footer_instagram'] ? $settings['footer_instagram'] : "#";
 
 $ytb_link = $settings['footer_youtube'] ? $settings['footer_youtube'] : "#";
 
 ?>
-<footer class="page-footer" id="page-footer">
-	<div class="footer-top">
-		<div class="container">
-			<p class="footer-name">TRUNG TÂM ỨNG DỤNG ĐÔNG PHƯƠNG Y PHÁP</p>
-			<div class="row">
-				<div class="col-md-5">
-					<div class="office">
-						<div class="outer-office">
-							<p class="head-office">Hà Nội</p>
-						</div>
-						<p><i class="fa fa-map-marker" aria-hidden="true"></i> Biệt thự B31 ngõ 70 Nguyễn Thị Định, Thanh Xuân, HN</p>
-						<p class="numberphone"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:097.457.3434">097.457.3434</a> - <a href="tel:(024)66873434">(024) 6687 3434</a></p>
-						<p><i class="fa fa-sign-in" aria-hidden="true"></i><a class="view-detail" href="https://goo.gl/maps/Ebx6AzccP6iv1CxP9" target="_blank" rel="noopener">Xem bản đồ</a></p>
-					</div>
-					<div class="office">
-						<div class="outer-office">
-							<p class="head-office">Hồ Chí Minh</p>
-						</div>
-						<p><i class="fa fa-map-marker" aria-hidden="true"></i> Số 145 Hoa Lan, phường 2, quận Phú Nhuận, TP. HCM</p>
-						<p class="numberphone"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:02866795254">(028) 6679 5254</a></p>
-						<p><i class="fa fa-sign-in" aria-hidden="true"></i><a class="view-detail" href="https://goo.gl/maps/hdjV9Uw41EPNU9JU9" target="_blank" rel="noopener">Xem bản đồ</a></p>
-					</div>
+<footer class="footer">
+	<div class="container">
+		<div class="row footer-top">
+			<div class="col-md-4">
+				<div class="logo-footer">
+					<img src="<?php echo THEME_URI; ?>/images/logo_footer.png" alt="" class="footer-img">
 				</div>
-				<div class="col-md-4 col-time-calendar">
-					<div class="outer-title">
-						<p class="heading-title">Lịch làm việc</p>
-					</div>
-					<p>Làm việc tất cả các ngày trong tuần</p>
-					<div class="d-flex justify-content-between">
-						<p><strong>Sáng</strong>: 8h - 12h</p>
-						<p><strong>Chiều</strong>: 13h30 - 17h30</p>
-					</div>
-					<p>Nếu đến sau 17h30 vui lòng liên hệ trước để bác sĩ đặt lịch ( <small>Trung tâm có chỗ để xe ô tô cho quý khách</small> )</p>
-					<div class="outer-title">
-						<p class="heading-title">Hỗ trợ</p>
-					</div>
-					<p>Đặt lịch khám/ tư vấn</p>
-					<form action="/" class="dat-lich-footer row">
-						<div class="form-group col-7">
-							<input name="fullname" type="text" id="fullname-footer" placeholder="Họ tên"class="form-control" required>
-							<label class="fs-0" for="fullname-footer">Họ tên</label>
-						</div>
-						<div class="form-group pl-0 col-5">
-							<input name="numberphone" type="text" id="phone-footer" placeholder="Số điện thoại" inputmode="decimal" pattern="(\+84|0){1}(9|8|7|5|3){1}[0-9]{8}" class="form-control" required>
-							<label class="fs-0" for="phone-footer">Số điện thoại</label>
-						</div>
-						<button type="submit" class="btn btn-submit" aria-label="submit form">Đặt lịch</button>
-					</form>
+				<p class="footer-title-logo">Trung tâm Vật Lý Trị Liệu,<br>
+					Phục Hồi Chức Năng</p>
+				<div class="footer-cta">
+					<a href="<?php echo $fb_lin; ?>" class="cta-item"><img
+							src="<?php echo THEME_URI; ?>/images/icons/facebook.png" alt=""></a>
+					<a href="#" class="cta-item"><img src="<?php echo THEME_URI; ?>/images/icons/zalo.png" alt=""></a>
+					<a href="<?php echo $ytb_link; ?>" class="cta-item"><img
+							src="<?php echo THEME_URI; ?>/images/icons/youtube.png" alt=""></a>
+					<a href="<?php echo $ins_link ?>" class="cta-item"><img
+							src="<?php echo THEME_URI; ?>/images/icons/instagram.png" alt=""></a>
 				</div>
-				<div class="col-md-3">
-					<div class="outer-title">
-						<p class="heading-title">KẾT NỐI VỚI CHÚNG TÔI</p>
-					</div>
-					<?php 
-					if(has_nav_menu('footer')){
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'footer',
-								'container'       => '',
-								'container_id'    => '',
-								'container_class' => '',
-								'menu_id'         => false,
-								'depth'           => 1,
-							)
-						);
-					}
-					?>
-					<ul class="social-link d-flex">
-						<li>
-							<a href="<?php echo $fb_link; ?>" target="_blank" rel="noopener"> <i class="fa fa-facebook" aria-hidden="true"></i> </a>
-						</li>
-						<li>
-							<a href="<?php echo $ytb_link; ?>" target="_blank" rel="noopener"> <i class="fa fa-youtube" aria-hidden="true"></i> </a>
-						</li>
-						<li>
-							<a href="<?php echo $ins_link; ?>" target="_blank" rel="noopener"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
-						</li>
-					</ul>
-					<a href="//www.dmca.com/Protection/Status.aspx?ID=7ce030b7-8b27-4646-a351-08ab7d805f75" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_25_120.png?ID=7ce030b7-8b27-4646-a351-08ab7d805f75"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+			</div>
+			<div class="col-md-4">
+				<p class="footer-title">Hà Nội</p>
+				<ul class="footer-address">
+					<li class="item">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<span class="footer-text">Biệt thự B31 ngõ 70 Nguyễn Thị Định - Thanh Xuân - Hà Nội <a href="#"
+								class="footer-link">(Xem bản đồ)</a></span>
+					</li>
+					<li class="item">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<span class="footer-text">097.457.3434</span>
+					</li>
+				</ul>
+				<p class="footer-title">Hồ Chí Minh</p>
+				<ul class="footer-address">
+					<li class="item">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<span class="footer-text">145 Hoa Lan - Phường 2 - Quận Phú Nhuận - TP Hồ Chí Minh <a href="#"
+								class="footer-link">(Xem bản đồ)</a></span>
+					</li>
+					<li class="item">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<span class="footer-text">098.314.6145</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<p class="footer-title">Lịch làm việc</p>
+				<div class="footer-calendar">
+					<p class="footer-text">Làm việc tất cả các ngày trong tuần</p>
+					<p class="footer-text">Sáng: 8h - 12h</p>
+					<p class="footer-text">Chiều: 13h20 - 17h20</p>
 				</div>
+				<p class="footer-title">Chính sách & điều khoản</p>
+				<?php
+				if (has_nav_menu('footer')) {
+					wp_nav_menu(
+						array(
+							'menu'            => 'footer',
+							'theme_location'  => 'footer',
+							'depth'           => 2,
+							'container'       => '',
+							'container_id'    => '',
+							'container_class' => '',
+							'menu_id'         => 'footer-policy',
+							'menu_class'      => 'footer-policy',
+						)
+					);
+				}
+				?>
+			</div>
+		</div>
+		<div class="row footer-bottom">
+			<div class="col-md-4">
+				<p class="copyright">© 2023 www.dongphuongyphap.com</p>
+			</div>
+			<div class="col-md-8">
+				<p class="footer-text">Thông tin trên website này chỉ mang tính chất tham khảo; không được xem là tư
+					vấn y khoa và không nhằm mục đích thay thế
+					cho tư vấn, chẩn đoán hoặc điều trị từ nhân viên y tế. Khi có vấn đề về sức khỏe hoặc cần hỗ trợ
+					cấp cứu người đọc cần
+					liên hệ bác sĩ và cơ sở y tế gần nhất</p>
 			</div>
 		</div>
 	</div>
-	<div class="respond">
-		<div class="container">
-			<p class="text-left">
-				<small>
-					Thông tin trên website này chỉ mang tính chất nội bộ tham khảo; không được xem là tư vấn y khoa và không nhằm mục đích thay thế cho tư vấn, chẩn đoán hoặc điều trị từ nhân viên y tế. Khi có vấn đề về sức khỏe hoặc cần hỗ trợ cấp cứu  người đọc cần liên hệ bác sĩ và cơ sở y tế gần nhất
-				</small>
-			</p>
-		</div>
-	</div>
-	<div class="copyright text-center">
-		© Bản quyền: www.dongphuongyphap.com
-	</div>
 </footer>
 <!-- Modal booking-->
-<div class="modal fade modal-booking-doctor" id="modal-booking-doctor" tabindex="-1" aria-labelledby="modal-booking-doctorLabel" aria-hidden="true">
+<!--<div class="modal fade modal-booking-doctor" id="modal-booking-doctor" tabindex="-1" aria-labelledby="modal-booking-doctorLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -146,7 +135,7 @@ $ytb_link = $settings['footer_youtube'] ? $settings['footer_youtube'] : "#";
 					<div class="expert-box mt-3">
 						<div class="d-flex align-items-center">
 							<div class="avt-box">
-								<img src="<?php echo get_template_directory_uri();?>/images/expert/1.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/expert/1.jpg" alt="">
 							</div>
 							<div class="expert-info">
 								<p class="expert-name"><strong>Ths.BS chuyên khoa II Nguyễn Thị Tuyết Lan</strong>
@@ -228,29 +217,29 @@ $ytb_link = $settings['footer_youtube'] ? $settings['footer_youtube'] : "#";
 			</span>
 		</a>
 	</div>
-</div>
+</div>-->
 
-<?php get_template_part('component/modal', 'video'); ?>
+<?php //get_template_part('component/modal', 'video'); ?>
 
-<?php get_template_part('component/modal', 'search'); ?>
+<?php //get_template_part('component/modal', 'search'); ?>
 
-<?php get_template_part('component/action', 'single'); ?>
+<?php //get_template_part('component/action', 'single'); ?>
 
-<?php get_template_part('component/footer', 'hotline'); ?>
+<?php //get_template_part('component/footer', 'hotline'); ?>
 
-<a href="#" id="btn-to-top" class="btn-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i>to top</a>
+<!--<a href="#" id="btn-to-top" class="btn-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i>to top</a>-->
 
-<?php if( is_single() ){ ?>
+<?php if (is_single()) { ?>
 	<script>
-		jQuery(document).ready(function () {
-            // share other
-			var btn_share_other = jQuery(".action-share li.other-share a");
-			if( btn_share_other.length ){
-				btn_share_other.on('click', function(e) {
+		jQuery(document).ready(function() {
+			// share other
+			var btn_share_other=jQuery(".action-share li.other-share a");
+			if(btn_share_other.length) {
+				btn_share_other.on('click',function(e) {
 					e.preventDefault();
-					if (navigator.share) {
+					if(navigator.share) {
 						navigator.share({
-							title: <?php echo "'" . get_the_title() . "'"; ?> ,
+							title: <?php echo "'" . get_the_title() . "'"; ?>,
 							text: <?php echo "'" . get_the_excerpt() . "'"; ?>,
 							url: <?php echo "'" . get_the_permalink() . "'"; ?>,
 						})
@@ -265,4 +254,5 @@ $ytb_link = $settings['footer_youtube'] ? $settings['footer_youtube'] : "#";
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

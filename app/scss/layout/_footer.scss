@@ -68,9 +68,9 @@
 	}
 	.footer-policy{
 		padding-left: 15px;
-		.item{
+		.menu-item{
 			margin-bottom: 15px;
-			.footer-link{
+			a{
 				color: $black;
 				&:hover{
 					text-decoration: none;

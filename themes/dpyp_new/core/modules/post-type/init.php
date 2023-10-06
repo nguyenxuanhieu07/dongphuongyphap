@@ -2,7 +2,7 @@
 /**
  * testinomial 
  */
-// require (__DIR__) . '/testinomial/init.php';
+ require (__DIR__) . '/testinomial/init.php';
 /**
  * Video 
  */
@@ -10,7 +10,7 @@ require(__DIR__) . '/video/init.php';
 /**
  * faq 
  */
-// require (__DIR__) . '/faq/init.php';
+ require (__DIR__) . '/faq/init.php';
 
 /**
  * doctor 

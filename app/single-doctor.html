@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="assets/slick-1.6.0/slick-theme.css" />
 	<link href="assets/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/jquery-ui-1.12.1/jquery-ui.min.css">
+	<!--<link rel="stylesheet" href="assets/color-picker/jquery-clockpicker.min.css">-->
 	<!--build:css css/styles.min.css-->
 	<link href="css/style.css" rel="stylesheet" />
 	<!--endbuild-->
@@ -274,9 +276,13 @@
 									placeholder="Họ và tên *" required>
 							</div>
 							<div class="form-group">
+								<label class="form-lable" for="email-sidebar">Email</label>
+								<input name="email" id="email-sidebar" inputmode="email" type="email" class="form-control control-custom" />
+							</div>
+							<div class="form-group">
 								<label class="form-lable" for="numberphone">Số điện thoại *</label>
 								<input type="text" name="numberphone" class="form-control control-custom"
-									id="numberphone" placeholder="Số điện thoại *" required>
+									id="numberphone" placeholder="Số điện thoại *" inputmode="decimal" pattern="(\+84|0){1}(9|8|7|5|3){1}[0-9]{8}" required>
 							</div>
 							<div class="form-group">
 								<label class="form-lable" for="note">Vấn đề đang gặp phải</label>
@@ -314,8 +320,11 @@
 										<p class="item-text">Ngày kìa</p>
 									</div>
 									<div class="date-item date-more">
-										<p class="item-title">+</p>
-										<p class="item-text">Khác</p>
+										<label class="lable-booking-date" for="booking-date">
+											<p class="item-title">+</p>
+											<p class="item-text">Khác</p>
+										</label>
+										<input name="booking-date" type="date" id="booking-date" placeholder="Ngày hẹn" class="form-control form-control-custom booking-date">
 									</div>
 								</div>
 							</div>
@@ -439,6 +448,8 @@
 	<script type="text/javascript" src="assets/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/slick-1.6.0/slick.min.js"></script>
 	<script type="text/javascript" src="assets/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<!--<script type="text/javascript" src="assets/color-picker/jquery-clockpicker.min.js"></script>-->
 	<!--build:js js/main.min.js -->
 	<script type="text/javascript" src="js/main.js"></script>
 	<!-- endbuild -->
