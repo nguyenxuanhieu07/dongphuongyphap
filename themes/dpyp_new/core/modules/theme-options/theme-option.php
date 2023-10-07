@@ -386,167 +386,46 @@ if( !function_exists('form_option_meta_box')){
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'Dịch vụ',
-                    'id'    => 'google-form-entry-service',
+                    'name' => 'Vấn đề đang gặp phải',
+                    'id'   => 'google-form-entry-note',
+                    'type' => 'text',
+                ),
+                array(
+                    'name'  => 'Bệnh lý',
+                    'id'    => 'google-form-entry-pathological',
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'office',
-                    'id'    => 'google-form-entry-office',
+                    'name'  => 'Cơ sở',
+                    'id'    => 'google-form-entry-basis',
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'Ngày đặt lịch',
+                    'name' => 'Bác sĩ',
+                    'id'   => 'google-form-entry-doctor',
+                    'type' => 'text',
+                ),
+                array(
+                    'name'  => 'Ngày khám',
                     'id'    => 'google-form-entry-date',
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'Câu hỏi',
-                    'id'    => 'google-form-entry-content',
+                    'name'  => 'Giờ khám',
+                    'id'    => 'google-form-entry-time',
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'Nguồn URL (google ads, facebook ads, link báo...) ',
+                    'name'  => 'Nguồn URL  ',
                     'id'    => 'google-form-entry-url',
                     'type'  => 'text',
                 ),
                 array(
-                    'name'  => 'Nguồn referer_url (google ads, facebook ads, link báo...) ',
+                    'name'  => 'Nguồn referer_url ',
                     'id'    => 'google-form-entry-referer-url',
                     'type'  => 'text',
                 ),
 
-            ),
-        );
-
-        $meta_boxes[] = array(
-            'title'  => __( 'Nội dung form liên hệ' ),
-            'settings_pages' => 'option_form',
-            'fields' => array(
-                array(
-                    'name'  => 'URL action',
-                    'id'    => 'google-form-contact-action',
-                    'type'  => 'text',
-                    'size'  => 100
-                ),
-                array(
-                    'name'  => 'Họ tên',
-                    'id'    => 'google-form-contact-entry-fullname',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Số điện thoại',
-                    'id'    => 'google-form-contact-entry-numberphone',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Email',
-                    'id'    => 'google-form-contact-entry-email',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Tiêu đề thu',
-                    'id'    => 'google-form-contact-entry-subject',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nội dung',
-                    'id'    => 'google-form-contact-entry-content',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn URL (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-contact-entry-url',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn referer_url (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-contact-entry-referer-url',
-                    'type'  => 'text',
-                ),
-
-            ),
-        );
-
-        $meta_boxes[] = array(
-            'title'  => __( 'Nội dung form sidebar' ),
-            'settings_pages' => 'option_form',
-            'fields' => array(
-                array(
-                    'name'  => 'URL action',
-                    'id'    => 'google-form-sidebar-action',
-                    'type'  => 'text',
-                    'size'  => 100
-                ),
-                array(
-                    'name'  => 'Họ tên',
-                    'id'    => 'google-form-sidebar-entry-fullname',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Số điện thoại',
-                    'id'    => 'google-form-sidebar-entry-numberphone',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Email',
-                    'id'    => 'google-form-sidebar-entry-email',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nội dung',
-                    'id'    => 'google-form-sidebar-entry-content',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Category',
-                    'id'    => 'google-form-sidebar-entry-category',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn URL (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-sidebar-entry-url',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn referer_url (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-sidebar-entry-referer-url',
-                    'type'  => 'text',
-                ),
-
-            ),
-        );
-
-        $meta_boxes[] = array(
-            'title'  => __( 'Nội dung form footer' ),
-            'settings_pages' => 'option_form',
-            'fields' => array(
-                array(
-                    'name'  => 'URL action',
-                    'id'    => 'google-form-footer-action',
-                    'type'  => 'text',
-                    'size'  => 100
-                ),
-                array(
-                    'name'  => 'Họ tên',
-                    'id'    => 'google-form-footer-entry-fullname',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Số điện thoại',
-                    'id'    => 'google-form-footer-entry-numberphone',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn URL (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-footer-entry-url',
-                    'type'  => 'text',
-                ),
-                array(
-                    'name'  => 'Nguồn referer_url (google ads, facebook ads, link báo...) ',
-                    'id'    => 'google-form-footer-entry-referer-url',
-                    'type'  => 'text',
-                ),
             ),
         );
 

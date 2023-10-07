@@ -60,7 +60,7 @@ var home_slider={
 			});
 		}
 	},
-	slider_expert: function(){
+	slider_expert: function() {
 		var list_slide=$('.home-expert .list-expert'),
 			item=$('.home-expert .list-expert .item');
 		if(list_slide.length>0&&item.length>4) {
@@ -257,7 +257,7 @@ var product_action={
 		minus.on('click',function() {
 			var input=$('.product-quantity .input-quantity'),
 				val=parseInt(input.val());
-			if(val > 1) {
+			if(val>1) {
 				var val_new=val-1;
 				input.val(val_new);
 			}
@@ -274,9 +274,9 @@ var product_action={
 	}
 }
 var check_out={
-	init: function(){
+	init: function() {
 		var form_checkout=$('.form-checkout');
-		if(form_checkout.length > 0){
+		if(form_checkout.length>0) {
 			form_checkout.on('submit',function() {
 				$('#modal-success').modal('show');
 				return false;
@@ -284,57 +284,118 @@ var check_out={
 		}
 	},
 }
-var form_booking = {
-	init : function(){
+var form_booking={
+	init: function() {
 		form_booking.input_datepicker();
 		form_booking.select_date();
 		form_booking.select_time();
+		form_booking.send_form();
 	},
-	input_datepicker : function(){
-		var ip_date=$('.form-rigister .booking-date');
-		if(ip_date.length > 0){
+	input_datepicker: function() {
+		var ip_date=$('.form-booking .booking-date');
+		if(ip_date.length>0) {
 			ip_date.datepicker({
 				showButtonPanel: true,
-		        dateFormat: 'dd/mm',
-		        changeMonth: true,
-		        changeYear: false
+				dateFormat: 'dd/mm',
+				changeMonth: true,
+				changeYear: false
 			});
-			$('.form-rigister .date-more').on('click',function(){
+			$('.form-booking .date-more').on('click',function() {
 				ip_date.trigger("select");
 			});
-			ip_date.on('change',function(){
+			ip_date.on('change',function() {
 				$('.date-custom').remove();
-				var inp_val = $(this).val();
-				var newElement = '<div class="date-item date-custom active" data-value='+inp_val+'><p class="item-title">'+inp_val+'</p></div>';
+				var inp_val=$(this).val();
+				var newElement='<div class="date-item date-custom active" data-value='+inp_val+'><p class="item-title">'+inp_val+'</p></div>';
 				$(".date-more").before(newElement);
 				$('input[name="booking-date"]').val(inp_val);
 			});
 		}
 	},
-	select_date : function(){
-		var item_date = $('.form-rigister .list-date .date-item');
-		if(item_date.length > 0){
-			$(document).on('click','.form-rigister .list-date .date-item',function(){
-				if(!$(this).hasClass('date-more')){
-					var inp_val = $(this).attr('data-value');
-					$('.form-rigister .list-date .date-item').removeClass('active');
+	select_date: function() {
+		var item_date=$('.form-booking .list-date .date-item');
+		if(item_date.length>0) {
+			$(document).on('click','.form-booking .list-date .date-item',function() {
+				if(!$(this).hasClass('date-more')) {
+					var inp_val=$(this).attr('data-value');
+					$('.form-booking .list-date .date-item').removeClass('active');
 					$(this).toggleClass('active');
 					$('input[name="booking-date"]').val(inp_val);
 				}
 			});
 		}
 	},
-	select_time : function(){
-		var item_date = $('.form-rigister .list-time .date-item');
-		if(item_date.length > 0){
-			$(document).on('click','.form-rigister .list-time .date-item',function(){
-				var inp_val = $(this).attr('data-value');
-				$('.form-rigister .list-time .date-item').removeClass('active');
+	select_time: function() {
+		var item_date=$('.form-booking .list-time .date-item');
+		if(item_date.length>0) {
+			$(document).on('click','.form-booking .list-time .date-item',function() {
+				var inp_val=$(this).attr('data-value');
+				$('.form-booking .list-time .date-item').removeClass('active');
 				$(this).toggleClass('active');
 				$('input[name="booking-time"]').val(inp_val);
 			});
 		}
 	},
+	send_form: function() {
+		var question_form=$('form.form-booking');
+		if(question_form.length>0) {
+			question_form.on('submit',function() {
+				var container=$(this);
+				form_booking.send_questions(container);
+				return false;
+			});
+		}
+	},
+	send_questions: function(container) {
+		
+		var form_data=new FormData();
+		var fullname=$(container).find('[name="fullname"]').val(),
+			email=$(container).find('[name="email"]').val(),
+			numberphone=$(container).find('[name="numberphone"]').val(),
+			note=$(container).find('[name="note"]').val(),
+			basis=$(container).find('[name="basis"]').val(),
+			doctor=$(container).find('[name="doctor"]').val(),
+			booking_date=$(container).find('[name="booking-date"]').val(),
+			booking_time=$(container).find('[name="booking-time"]').val(),
+			data_url=window.location.href,
+			referer=document.referrer;
+		form_data.append('fullname',fullname);
+		form_data.append('email',email);
+		form_data.append('numberphone',numberphone);
+		form_data.append('note',note);
+		form_data.append('basis',basis);
+		form_data.append('doctor',doctor);
+		form_data.append('booking_date',booking_date);
+		form_data.append('booking_time',booking_time);
+		form_data.append('data_url',data_url);
+		form_data.append('referer',referer);
+		form_data.append('action','form_dat_lich');
+		console.log(form_data);
+		//if(fullname!==""&&phone!==""&&basis!==""&&doctor!==""&&booking_date!==""&&booking_timme!=="") {
+			$.ajax({
+				url: vmajax.ajaxurl,
+				data: form_data,
+				type: "POST",
+				dataType: "html",
+				cache: false,
+				contentType: false,
+				processData: false,
+				statusCode: {
+					0: function(result) {
+						$(container).closest('form').find("input[type=text],input[type=email], textarea").val("");
+						$(container).find('button').attr('disabled','disabled');
+					},
+					200: function() {
+						$(container).closest('form').find("input[type=text], textarea").val("");
+						$(container).find('button').attr('disabled','disabled')
+					}
+				}
+			});
+		//} 
+		//else {
+		//	alert('Vui lòng điền đủ thông tin!');
+		//}
+	}
 }
 jQuery(document).ready(function() {
 	//slider

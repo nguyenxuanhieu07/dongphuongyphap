@@ -104,6 +104,7 @@ function theme_scripts()
 	wp_enqueue_script('jquery-min', get_template_directory_uri() . '/js/jquery.min.js', array(), '221414', true);
 	wp_enqueue_script('jquery-datepicker', get_template_directory_uri() . '/assets/color-picker/jquery-clockpicker.min.js', array(), '221414', true);
 	wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.js', array(), '221414', true);
+	wp_enqueue_script('slick', get_template_directory_uri() . '/assets/slick/slick.min.js', array(), '221414', true);
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js?2', array('jquery'), '2', true);
 	wp_localize_script('main-js', 'vmajax', array('ajaxurl' => admin_url('admin-ajax.php')));
 	// font-awesome
@@ -124,6 +125,8 @@ function theme_scripts()
 	wp_dequeue_style('wp-block-library');
 	wp_enqueue_style('jquery-datepicker', get_template_directory_uri() . '/assets/color-picker/jquery-clockpicker.min.css');
 	wp_enqueue_style('jquery-ui', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.css');
+	wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/slick.css');
+	wp_enqueue_style('slick-theme', get_template_directory_uri() . '/assets/slick/slick-theme.css');
 	wp_enqueue_style('main-css', get_template_directory_uri() . '/css/styles.min.css');
 	wp_enqueue_style('theme-style', get_stylesheet_uri());
 }

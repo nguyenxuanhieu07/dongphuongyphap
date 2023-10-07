@@ -350,16 +350,4 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 		height: 175px;
 	}
 }
-.date-more{
-	position: relative;
-}
-.form-rigister .list-time .date-item:not(:last-child){
-	opacity: 0.5;
-}
-.form-rigister .active{
-	opacity: 1 !important;
-}
-.booking-date{
-	position: absolute;
-	opacity: 0;
-}
+

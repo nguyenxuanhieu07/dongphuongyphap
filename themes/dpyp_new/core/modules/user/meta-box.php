@@ -128,8 +128,8 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 				'id'          => 'workplace-user',
 				'type'        => 'select_advanced',
 				'options'     => array(
-					'hn'  => 'Biệt thự B31, ngõ 70 Nguyễn Thị Định, Nhân Chính. Thanh Xuân, Hà Nội',
-					'hcm' => 'Số 145 Hoa Lan, phường 2, quận Phú Nhuận, HCM'
+					'Hà Nội'  => 'Biệt thự B31, ngõ 70 Nguyễn Thị Định, Nhân Chính. Thanh Xuân, Hà Nội',
+					'Hồ Chí Minh' => 'Số 145 Hoa Lan, phường 2, quận Phú Nhuận, HCM'
 				),
 				'multiple'    => false,
 				'tab'         => 'general',

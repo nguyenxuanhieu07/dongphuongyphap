@@ -51,7 +51,7 @@ if(!function_exists('get_consultation_box_post_type')){
 			return $options['consultation_box_support'];
 		}
 		else{
-			return false;
+			return [];
 		}
 	}
 }
