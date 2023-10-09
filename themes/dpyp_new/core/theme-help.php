@@ -72,3 +72,14 @@ if ( ! function_exists( 'theme_get_primary_term' ) ) {
 		return $term_primary;
 	}
 }
+
+if(!function_exists('get_users_by_role')){
+	function get_users_by_role($role,$number_of_users) {
+	    $users = get_users(array(
+	        'role' => $role,
+	        'number'  => $number_of_users,
+	    ));
+
+	    return $users;
+	}
+}

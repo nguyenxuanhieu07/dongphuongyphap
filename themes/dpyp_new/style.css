@@ -351,3 +351,6 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	}
 }
 
+.archive-doctors .post-doctor .post-doctor-thumbnail img {
+	border-radius: 50%;
+}

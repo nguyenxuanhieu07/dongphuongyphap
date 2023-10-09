@@ -228,8 +228,17 @@ function meta_box_langding_page($meta_boxes)
 				'options'     => array(
 					'bs'     => 'Bác sĩ',
 					'ktv'    => 'Kỹ thuật viên',
-					'editor' => 'Biên tập viên'
 				),
+			),
+			array(
+				'name'    => 'Giới thiệu chung',
+				'id'      => 'page-author-content',
+				'type'    => 'wysiwyg',
+				'raw'     => false,
+				'options' => [
+					'textarea_rows' => 8,
+					'teeny'         => false,
+				],
 			),
 			array(
 				'name'        => __('Cấu trúc slider'),

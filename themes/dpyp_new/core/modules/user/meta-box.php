@@ -13,6 +13,7 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 			$position[$value['position-group-title']] = $value['position-group-title'];
 		}
 	}
+	
 	$meta_boxes[] = array(
 		'id'          => 'expert-post-meta',
 		'title'       => 'Hồ sơ thành viên',
@@ -116,6 +117,33 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 				'tab'  => 'general',
 			),
 			array(
+				'name'        => 'Học hàm / học vị',
+				'placeholder' => 'Lựa chọn',
+				'id'          => 'degree-user',
+				'type'        => 'select_advanced',
+				'options'     => $degree,
+				'multiple'    => true,
+				'tab'         => 'general',
+			),
+			array(
+				'name'        => 'Chức vụ',
+				'placeholder' => 'Lựa chọn',
+				'id'          => 'position-user',
+				'type'        => 'select_advanced',
+				'options'     => $position,
+				'multiple'    => true,
+				'tab'         => 'general',
+			),
+			array(
+				'name'        => 'Lĩnh vực chuyên môn',
+				'id'       => 'user-specialize',
+			    'type'     => 'taxonomy',
+			    'taxonomy' => 'specialize',
+			    'ajax'     => true,
+				'multiple'    => true,
+				'tab'         => 'general',
+			),
+			array(
 				'name' => 'Số năm kinh nghiệm',
 				'id'   => 'user-exp',
 				'type' => 'number',
@@ -132,24 +160,6 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 					'Hồ Chí Minh' => 'Số 145 Hoa Lan, phường 2, quận Phú Nhuận, HCM'
 				),
 				'multiple'    => false,
-				'tab'         => 'general',
-			),
-			array(
-				'name'        => 'Học hàm / học vị',
-				'placeholder' => 'Lựa chọn',
-				'id'          => 'degree-user',
-				'type'        => 'select_advanced',
-				'options'     => $degree,
-				'multiple'    => true,
-				'tab'         => 'general',
-			),
-			array(
-				'name'        => 'Chức vụ',
-				'placeholder' => 'Lựa chọn',
-				'id'          => 'position-user',
-				'type'        => 'select_advanced',
-				'options'     => $position,
-				'multiple'    => true,
 				'tab'         => 'general',
 			),
 			array(
@@ -213,3 +223,75 @@ add_action('rwmb_meta_boxes', function ($meta_boxes) {
 
 	return $meta_boxes;
 });
+
+if (!function_exists('dongphuong_theme_option_settings_pages')) {
+	add_filter('mb_settings_pages', 'dongphuong_theme_option_settings_pages');
+	function dongphuong_theme_option_settings_pages($settings_pages)
+	{
+		$settings_pages[] = array(
+			'id'          => 'dongphuong-theme-options',
+			'option_name' => 'dongphuong-theme-options',
+			'menu_title'  => __('Cài đặt chung', 'dongphuong_yphap'),
+			'icon_url'    => 'dashicons-admin-generic',
+			'parent'      => 'users.php',
+		);
+		return $settings_pages;
+	}
+}
+if (!function_exists('dongphuong_theme_option_meta_box')) {
+	add_filter('rwmb_meta_boxes', 'dongphuong_theme_option_meta_box');
+	function dongphuong_theme_option_meta_box($meta_boxes)
+	{
+		$meta_boxes[] = array(
+			'title'          => __('Học hàm / học vị'),
+			'settings_pages' => 'dongphuong-theme-options',
+			'fields'         => array(
+				array(
+					'name'        => __('Học hàm / học vị', 'dongphuong_yphap'),
+					'id'          => 'degree-group',
+					'type'        => 'group',
+					'clone'       => true,
+					//'sort_clone'  => true,
+					'collapsible' => true,
+					'group_title' => array('field' => 'degree-group-title'),
+					'save_state'  => true,
+					'add_button'  => 'Thêm học hàm / học vị',
+					'fields'      => array(
+						array(
+							'name' => 'Tên',
+							'id'   => 'degree-group-title',
+							'type' => 'text',
+							'size' => 50,
+						),
+					),
+				),
+			),
+		);
+		$meta_boxes[] = array(
+			'title'          => __('Chức vụ'),
+			'settings_pages' => 'dongphuong-theme-options',
+			'fields'         => array(
+				array(
+					'name'        => __('Chức vụ', 'dongphuong_yphap'),
+					'id'          => 'position-group',
+					'type'        => 'group',
+					'clone'       => true,
+					//'sort_clone'  => true,
+					'collapsible' => true,
+					'group_title' => array('field' => 'position-group-title'),
+					'save_state'  => true,
+					'add_button'  => 'Thêm Chức vụ',
+					'fields'      => array(
+						array(
+							'name' => 'Tên',
+							'id'   => 'position-group-title',
+							'type' => 'text',
+							'size' => 50,
+						),
+					),
+				),
+			),
+		);
+		return $meta_boxes;
+	}
+}

@@ -1,12 +1,4 @@
 <?php
-$cat_id = 0;
-if (is_category()) {
-	$cat_id = get_queried_object()->term_id;
-
-} elseif (is_single() && function_exists('yoast_get_primary_term_id')) {
-	$cat_id = yoast_get_primary_term_id('category', get_the_ID());
-
-}
 $ngayThangHienTai   = date("d/m");
 $ngayThangTiepTheo1 = date("d/m", strtotime("+1 day"));
 $ngayThangTiepTheo2 = date("d/m", strtotime("+2 days"));

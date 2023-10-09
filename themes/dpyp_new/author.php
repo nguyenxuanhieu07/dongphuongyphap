@@ -1,6 +1,5 @@
 <?php
 get_header();
-
 ?>
 <main class="single-doctor">
 	<div class="breadcrumb">
