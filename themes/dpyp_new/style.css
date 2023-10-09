@@ -25,34 +25,42 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .embed-responsive .rll-youtube-player {
 	margin-top: -56.23%;
 }
+
 .kk-star-ratings {
 	flex-wrap: wrap;
 }
-.kk-star-ratings .kksr-stars{
+
+.kk-star-ratings .kksr-stars {
 	width: 100%;
 }
+
 .single-post-meta .review .kk-star-ratings .kksr-legend {
 	margin: 5px 0;
 }
+
 .kk-star-ratings .kksr-muted {
 	opacity: 1;
 }
+
 .office-contact .title {
 	color: #056839;
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 30px;
 }
+
 .live-chat-messenger {
 	z-index: 10;
 	left: 15px;
 	right: auto;
 	bottom: 120px;
 }
+
 .page-footer {
 	padding-bottom: 50px;
 }
-.dat-lich-footer .fs-0{
+
+.dat-lich-footer .fs-0 {
 	font-size: 0;
 	position: absolute;
 	pointer-events: none;
@@ -92,7 +100,7 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	margin-bottom: 8px;
 }
 
-#btn-to-top{
+#btn-to-top {
 	bottom: 60px;
 }
 
@@ -154,6 +162,7 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	margin-bottom: 0;
 	align-items: center;
 }
+
 .heal .child-cat li {
 	font-weight: 700;
 	margin: 0 10px;
@@ -161,6 +170,7 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	display: inline-block;
 	position: relative;
 }
+
 .heal .widget-title {
 	border-bottom: 0;
 	margin-bottom: 0;
@@ -173,7 +183,7 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	border-bottom: 1px solid #ccc;
 }
 
-.heal .view-all{
+.heal .view-all {
 	bottom: auto;
 	top: 10px;
 }
@@ -252,8 +262,10 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	position: fixed;
 }
 
-@media (min-width: 768px){
-	#section-2 .post-title,#section-3 .post-title {
+@media (min-width: 768px) {
+
+	#section-2 .post-title,
+	#section-3 .post-title {
 		height: 50px;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -264,14 +276,14 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 
 }
 
-@media (max-width: 1366px){
+@media (max-width: 1366px) {
 	.home-slide {
 		min-height: 400px;
 	}
 }
 
-@media (max-width: 768px){
-	.heal .child-cat{
+@media (max-width: 768px) {
+	.heal .child-cat {
 		white-space: nowrap;
 		overflow-y: hidden;
 		overflow-x: scroll;
@@ -284,7 +296,7 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 	}
 }
 
-@media (max-width: 575px){
+@media (max-width: 575px) {
 
 	.heal .view-all {
 		display: none;
@@ -298,11 +310,11 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 		font-size: 20px;
 	}
 
-	.slick-next{
+	.slick-next {
 		right: 0;
 	}
 
-	.slick-prev{
+	.slick-prev {
 		left: 0;
 	}
 
@@ -315,20 +327,25 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 		line-height: 1.5;
 	}
 
-	#btn-to-top{
+	#btn-to-top {
 		bottom: 200px;
 	}
 
-	
-	.home-technical .description-title br, .home-educate .description-title br , .home-system .description-title br {
+
+	.home-technical .description-title br,
+	.home-educate .description-title br,
+	.home-system .description-title br {
 		display: none;
 	}
+
 	.live-chat-messenger {
 		bottom: 175px;
 	}
+
 	.live-chat-zalo {
 		bottom: 130px;
 	}
+
 	.circle-hotline {
 		bottom: 210px;
 		left: 15px
@@ -336,16 +353,17 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 
 }
 
-@media (max-width: 415px){
+@media (max-width: 415px) {
 	.home-doctor .avt-doctor {
 		height: 224px;
 	}
+
 	.home-slide {
 		min-height: 350px;
 	}
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
 	.home-doctor .avt-doctor {
 		height: 175px;
 	}
@@ -353,4 +371,26 @@ body.single-doctor .breadcrumb-nav .breadcrumb {
 
 .archive-doctors .post-doctor .post-doctor-thumbnail img {
 	border-radius: 50%;
+}
+.list-reviews .review .avatar{
+	width: 66px;
+	height: 66px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.list-reviews .review .avatar img {
+	object-fit: cover;
+	object-position: 50% 50%;
+	-o-object-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+}
+.page-basis .list-doctor{
+	margin-bottom: 50px;
+}
+.list-doctor .post-doctor-thumbnail img{
+	border-radius: 50%;
+}
+.form-booking {
+	margin-bottom: 26px;
 }

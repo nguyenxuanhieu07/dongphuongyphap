@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__FILE__) . '/meta-box.php';
 if (!function_exists('wb_create_post_type_products')) {
 	function wb_create_post_type_products()
 	{

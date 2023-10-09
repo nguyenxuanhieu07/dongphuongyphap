@@ -226,8 +226,8 @@ function meta_box_langding_page($meta_boxes)
 				'id'          => 'role-author',
 				'type'        => 'select_advanced',
 				'options'     => array(
-					'bs'     => 'Bác sĩ',
-					'ktv'    => 'Kỹ thuật viên',
+					'bs'  => 'Bác sĩ',
+					'ktv' => 'Kỹ thuật viên',
 				),
 			),
 			array(
@@ -327,7 +327,7 @@ function meta_box_langding_page($meta_boxes)
 				'label' => 'Đánh giá',
 				'icon'  => 'dashicons-star-filled',
 			),
-			'map'       => array(
+			'map'            => array(
 				'label' => 'Map',
 				'icon'  => 'dashicons-location',
 			),
@@ -354,10 +354,11 @@ function meta_box_langding_page($meta_boxes)
 				'tab'  => 'general'
 			),
 			array(
-				'name' => 'Hình ảnh',
-				'id'   => 'infrastructure-images',
-				'type' => 'image_advanced',
-				'tab'  => 'infrastructure'
+				'name'          => 'Hình ảnh',
+				'id'            => 'infrastructure-images',
+				'type'          => 'image_advanced',
+				'max_file_size' => '1gb',
+				'tab'           => 'infrastructure'
 			),
 			array(
 				'name'        => 'Nội dung',

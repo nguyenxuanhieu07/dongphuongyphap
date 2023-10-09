@@ -211,7 +211,7 @@ var page_slider={
 	list_adive_bottom: function() {
 		var list_slide=$('.box-list .list-adive-bottom'),
 			item=$('.box-list .list-adive-bottom .inner');
-		if(list_slide.length>0&&item.length>3) {
+		if(list_slide.length>0&&item.length>2) {
 			list_slide.slick({
 				dots: false,
 				arrow: true,
@@ -347,7 +347,7 @@ var form_booking={
 		}
 	},
 	send_questions: function(container) {
-		
+
 		var form_data=new FormData();
 		var fullname=$(container).find('[name="fullname"]').val(),
 			email=$(container).find('[name="email"]').val(),
@@ -370,31 +370,61 @@ var form_booking={
 		form_data.append('data_url',data_url);
 		form_data.append('referer',referer);
 		form_data.append('action','form_dat_lich');
-		console.log(form_data);
 		//if(fullname!==""&&phone!==""&&basis!==""&&doctor!==""&&booking_date!==""&&booking_timme!=="") {
-			$.ajax({
-				url: vmajax.ajaxurl,
-				data: form_data,
-				type: "POST",
-				dataType: "html",
-				cache: false,
-				contentType: false,
-				processData: false,
-				statusCode: {
-					0: function(result) {
-						$(container).closest('form').find("input[type=text],input[type=email], textarea").val("");
-						$(container).find('button').attr('disabled','disabled');
-					},
-					200: function() {
-						$(container).closest('form').find("input[type=text], textarea").val("");
-						$(container).find('button').attr('disabled','disabled')
-					}
+		$.ajax({
+			url: vmajax.ajaxurl,
+			data: form_data,
+			type: "POST",
+			dataType: "html",
+			cache: false,
+			contentType: false,
+			processData: false,
+			statusCode: {
+				0: function(result) {
+					$(container).closest('form').find("input[type=text],input[type=email], textarea").val("");
+					$(container).find('button').attr('disabled','disabled');
+				},
+				200: function() {
+					$(container).closest('form').find("input[type=text], textarea").val("");
+					$(container).find('button').attr('disabled','disabled')
 				}
-			});
+			}
+		});
 		//} 
 		//else {
 		//	alert('Vui lòng điền đủ thông tin!');
 		//}
+	}
+}
+var add_to_cart={
+	init: function() {
+		add_to_cart.buy_now();
+		add_to_cart.add_to_cart2();
+	},
+	buy_now: function() {
+		var btn_buy=$('.product-action .buy-now');
+		if(btn_buy.length>0) {
+			btn_buy.on('click',function() {
+				var data=$('.product-action');
+				add_to_cart.add_to_section(data);
+				return false;
+			});
+		}
+	},
+	add_to_cart2: function() {
+		var btn_buy=$('.product-action .add-to-cart');
+		if(btn_buy.length>0) {
+			btn_buy.on('click',function() {
+				var data=$('.product-action');
+				return false;
+			});
+		}
+	},
+	add_to_section: function(data){
+		var quantity=data.find('input.input-quantity').val(),
+			product_id=data.find('input.product-id').val();
+		console.log(product_id)
+		console.log(quantity)
 	}
 }
 jQuery(document).ready(function() {
@@ -405,6 +435,6 @@ jQuery(document).ready(function() {
 	product_action.init();
 	check_out.init();
 	form_booking.init();
-
+	add_to_cart.init();
 
 });

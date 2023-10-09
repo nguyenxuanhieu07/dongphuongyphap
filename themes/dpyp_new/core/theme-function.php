@@ -36,13 +36,15 @@ if (!function_exists('theme_setup')):
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters(
-			'ntn_theme_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'ntn_theme_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
 			)
-		)
 		);
 
 		// Add theme support for selective refresh for widgets.
@@ -319,3 +321,27 @@ function yoast_seo_robots_modify_search($robots)
 		return $robots;
 	}
 }
+
+/**
+ * ẩn editor
+ */
+function hide_editor()
+{
+	$post_type = array('products');
+	foreach ($post_type as $key => $value) {
+		remove_post_type_support($value, 'editor');
+	}
+
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+	if (!isset($post_id)) return;
+	$template                 = get_post_meta($post_id, '_wp_page_template', true);
+	$templates_to_hide_editor = array(
+		'template-pages/archive-author.php',
+		'template-pages/page-basis.php',
+		'template-pages/check-out.php'
+	);
+	if (in_array($template, $templates_to_hide_editor)) {
+		remove_post_type_support('page', 'editor');
+	}
+}
+add_action('init', 'hide_editor');
