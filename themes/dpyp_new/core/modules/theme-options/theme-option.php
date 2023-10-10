@@ -428,7 +428,58 @@ if( !function_exists('form_option_meta_box')){
 
             ),
         );
-
+         $meta_boxes[] = array(
+            'title'  => __( 'Nội dung form thanh toán' ),
+            'settings_pages' => 'option_form',
+            'fields' => array(
+                array(
+                    'name' => 'URL action',
+                    'id'   => 'checkout-action',
+                    'type' => 'text',
+                    'size' => 100
+                ),
+                array(
+                    'name' => 'Họ tên',
+                    'id'   => 'checkout-fullname',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Địa chỉ',
+                    'id'   => 'checkout-address',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Số điện thoại',
+                    'id'   => 'checkout-numberphone',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Email',
+                    'id'   => 'checkout-email',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Ghi chú',
+                    'id'   => 'checkout-content',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Tên sản phẩm x số lượng',
+                    'id'   => 'checkout-product-name',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Giá',
+                    'id'   => 'checkout-product-price',
+                    'type' => 'text',
+                ),
+                array(
+                    'name' => 'Phương thức thanh toán',
+                    'id'   => 'checkout-pay',
+                    'type' => 'text',
+                ),
+            )
+         );
         $meta_boxes[] = array(
             'title'          => 'Footer option - mạng xã hội',
             'settings_pages' => 'option_form',

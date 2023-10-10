@@ -1,7 +1,7 @@
 <?php
 $terms = get_terms(
 	array(
-		'taxonomy'   => 'products_cat',
+		'taxonomy'   => 'product_cat',
 		'hide_empty' => false,
 		'parent'     => 0
 	)
@@ -18,19 +18,19 @@ $terms = get_terms(
 				<h2 class="archive-title"><a href="<?php echo $link; ?>">
 						<?php echo $name; ?>
 					</a></h2>
-				<a href="#" class="archive-more">Xem nhiều hơn <i class="fa fa-angle-double-right"
+				<a href="<?php echo $link; ?>" class="archive-more">Xem nhiều hơn <i class="fa fa-angle-double-right"
 						aria-hidden="true"></i></a>
 			</div>
 			<div class="row list-products">
 				<?php
 				$args      = array(
-					'post_type'      => 'products',
+					'post_type'      => 'product',
 					'post_status'    => 'publish',
 					'posts_per_page' => 4,
 					'order'          => 'desc',
 					'tax_query'      => array(
 						array(
-							'taxonomy' => 'products_cat',
+							'taxonomy' => 'product_cat',
 							'field'    => 'id',
 							'terms'    => $value->term_id,
 						)

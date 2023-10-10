@@ -5,7 +5,7 @@ function dongphuong_products_metabox($meta_boxes)
 	$meta_boxes[] = array(
 		'title'       => __('Cấu trúc nội dung'),
 		'id'          => 'products-option',
-		'post_types'  => 'products',
+		'post_types'  => 'product',
 		'context'     => 'normal',
 		'priority'    => 'high',
 		'tabs'        => array(

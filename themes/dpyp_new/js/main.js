@@ -273,23 +273,64 @@ var product_action={
 		});
 	}
 }
-var check_out={
+var form_check_out={
 	init: function() {
+		form_check_out.check_out();
+	},
+	check_out:function(){
 		var form_checkout=$('.form-checkout');
 		if(form_checkout.length>0) {
 			form_checkout.on('submit',function() {
-				$('#modal-success').modal('show');
+				var container = $(this);
+				form_check_out.send_form_checkout(container);
 				return false;
 			})
 		}
 	},
+	send_form_checkout: function(container){
+		var form_data=new FormData();
+		var fullname=$(container).find('[name="fullname"]').val(),
+			numberphone=$(container).find('[name="numberphone"]').val(),
+			address=$(container).find('[name="address"]').val(),
+			email=$(container).find('[name="email"]').val(),
+			content=$(container).find('[name="content"]').val(),
+			pay=$(container).find('[name="pay"]').val(),
+			product_name=$(container).find('[name="product_name"]').val(),
+			total_price=$(container).find('[name="total_price"]').val();
+		form_data.append('fullname',fullname);
+		form_data.append('numberphone',numberphone);
+		form_data.append('email',email);
+		form_data.append('content',content);
+		form_data.append('address',address);
+		form_data.append('pay',pay);
+		form_data.append('product_name',product_name);
+		form_data.append('total_price',total_price);
+		form_data.append('action','form_thanh_toan');
+		$.ajax({
+			url: vmajax.ajaxurl,
+			data: form_data,
+			type: "POST",
+			dataType: "html",
+			cache: false,
+			contentType: false,
+			processData: false,
+			statusCode: {
+				0: function(result) {
+					$('#modal-success').modal('show');
+				},
+				200: function() {
+					$('#modal-success').modal('show');
+				}
+			}
+		});
+	},
 }
-var form_booking={
+var form_booking_customer={
 	init: function() {
-		form_booking.input_datepicker();
-		form_booking.select_date();
-		form_booking.select_time();
-		form_booking.send_form();
+		form_booking_customer.input_datepicker();
+		form_booking_customer.select_date();
+		form_booking_customer.select_time();
+		form_booking_customer.send_form();
 	},
 	input_datepicker: function() {
 		var ip_date=$('.form-booking .booking-date');
@@ -341,7 +382,7 @@ var form_booking={
 		if(question_form.length>0) {
 			question_form.on('submit',function() {
 				var container=$(this);
-				form_booking.send_questions(container);
+				form_booking_customer.send_questions(container);
 				return false;
 			});
 		}
@@ -420,12 +461,39 @@ var add_to_cart={
 			});
 		}
 	},
-	add_to_section: function(data){
+	add_to_section: function(data) {
 		var quantity=data.find('input.input-quantity').val(),
 			product_id=data.find('input.product-id').val();
-		console.log(product_id)
-		console.log(quantity)
-	}
+		var form_data=new FormData();
+		form_data.append('quantity',quantity);
+		form_data.append('product_id',product_id);
+		form_data.append('action','add_to_cart_section');
+		$('.product-info .loader').show();
+		$('.product-container').css('opacity',0.5);
+		$.ajax({
+			url: vmajax.ajaxurl,
+			data: form_data,
+			type: "POST",
+			dataType: "html",
+			cache: false,
+			contentType: false,
+			processData: false,
+			statusCode: {
+				0: function(result) {
+					$('.product-info .loader').hide();
+					$('.product-container').css('opacity',1);
+				},
+				200: function(result) {
+					var data=JSON.parse(result);
+					$('.product-info .loader').hide();
+					$('.product-container').css('opacity',1);
+					if(data.success) {
+						window.location.href=checkout.url;
+					}
+				}
+			}
+		});
+	},
 }
 jQuery(document).ready(function() {
 	//slider
@@ -433,8 +501,8 @@ jQuery(document).ready(function() {
 	page_slider.init();
 	collpase_js.init();
 	product_action.init();
-	check_out.init();
-	form_booking.init();
+	form_check_out.init();
+	form_booking_customer.init();
 	add_to_cart.init();
 
 });

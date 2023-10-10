@@ -67,11 +67,11 @@ if ($sale_price > 0) {
 					</ul>
 					<div class="product-price">
 						<span class="regular-price">
-							<?php echo $regular_price; ?>đ
+							<?php echo format_price($regular_price); ?>đ
 						</span>
 						<?php if ($sale_price > 0): ?>
 							<span class="sale-price">
-								<?php echo $product_price; ?>đ
+								<?php echo format_price($product_price); ?>đ
 							</span>
 						<?php endif; ?>
 					</div>
@@ -85,7 +85,7 @@ if ($sale_price > 0) {
 							<input type="text" value="<?php echo $post_id; ?>" class="product-id" min="1" hidden>
 							<span class="quantity-plus">+</span>
 						</div>
-						<a href="#" class="buy-now" >Mua ngay</a>
+						<a href="#" class="buy-now">Mua ngay</a>
 						<a href="#" class="add-to-cart"><img
 								src="<?php echo THEME_URI; ?>/images/icons/shopping-cart.png" alt="" class="img">Thêm
 							vào giỏ hàng</a>
@@ -93,5 +93,19 @@ if ($sale_price > 0) {
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="loader">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+		<div class="bar4"></div>
+		<div class="bar5"></div>
+		<div class="bar6"></div>
+		<div class="bar7"></div>
+		<div class="bar8"></div>
+		<div class="bar9"></div>
+		<div class="bar10"></div>
+		<div class="bar11"></div>
+		<div class="bar12"></div>
 	</div>
 </div>

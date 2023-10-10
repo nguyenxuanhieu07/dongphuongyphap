@@ -41,6 +41,7 @@ if (!function_exists('form_dat_lich')) {
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_exec($curl);
 		curl_close($curl);
 		header("Refresh:0");
@@ -49,7 +50,51 @@ if (!function_exists('form_dat_lich')) {
 	add_action('wp_ajax_nopriv_form_dat_lich', 'form_dat_lich');
 	add_action('wp_ajax_form_dat_lich', 'form_dat_lich');
 }
+if (!function_exists('form_thanh_toan')) {
+	function form_thanh_toan()
+	{
+		session_start();
+		$option_name = 'option_form';
 
+		$google_action     = rwmb_meta('checkout-action', array('object_type' => 'setting'), $option_name);
+		$entry_fullname    = rwmb_meta('checkout-fullname', array('object_type' => 'setting'), $option_name);
+		$entry_numberphone = rwmb_meta('checkout-numberphone', array('object_type' => 'setting'), $option_name);
+		$entry_email       = rwmb_meta('checkout-email', array('object_type' => 'setting'), $option_name);
+
+		$entry_address      = rwmb_meta('checkout-address', array('object_type' => 'setting'), $option_name);
+		$entry_content      = rwmb_meta('checkout-content', array('object_type' => 'setting'), $option_name);
+		$entry_product_name = rwmb_meta('checkout-product-name', array('object_type' => 'setting'), $option_name);
+		$entry_price        = rwmb_meta('checkout-product-price', array('object_type' => 'setting'), $option_name);
+		$entry_pay          = rwmb_meta('checkout-pay', array('object_type' => 'setting'), $option_name);
+
+		$fields        = array(
+			$entry_fullname     => $_POST["fullname"],
+			$entry_numberphone  => $_POST["numberphone"],
+			$entry_email        => $_POST["email"],
+
+			$entry_address      => $_POST["address"],
+			$entry_content      => $_POST["content"],
+			$entry_product_name => $_POST["product_name"],
+			$entry_price        => $_POST["total_price"],
+			$entry_pay          => $_POST["pay"],
+		);
+
+		$fields_string = http_build_query($fields);
+		$url           = $google_action;
+		$curl          = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+		curl_exec($curl);
+		curl_close($curl);
+		unset($_SESSION["cart"]);
+		header("Refresh:0");
+		die();
+	}
+	add_action('wp_ajax_nopriv_form_thanh_toan', 'form_thanh_toan');
+	add_action('wp_ajax_form_thanh_toan', 'form_thanh_toan');
+}
 if (!function_exists('form_send_contact')) {
 	function form_send_contact()
 	{
