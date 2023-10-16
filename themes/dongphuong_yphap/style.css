@@ -218,3 +218,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .product-big .product-image{
 	height: 229px;
 }
+.kksr-legend{
+	display: none;
+}

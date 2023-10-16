@@ -1,193 +1,21 @@
 <?php
 get_header();
-$post_id         = get_the_ID();
-$product_name    = rwmb_meta('product-name') ? rwmb_meta('product-name') : get_the_title();
-$product_gallery = rwmb_meta('product-gallery') ? rwmb_meta('product-gallery') : '';
-$product_price   = rwmb_meta('product-price') ? rwmb_meta('product-price') : 0;
-$sale_price      = rwmb_meta('product-sale') ? rwmb_meta('product-sale') : 0;
-$product_desc    = rwmb_meta('product-desc') ? rwmb_meta('product-desc') : '';
-$regular_price   = $product_price;
-if ($sale_price > 0) {
-	$regular_price = $sale_price;
-}
+$product_name = rwmb_meta('product-name') ? rwmb_meta('product-name') : get_the_title();
+$product_desc = rwmb_meta('product-desc') ? rwmb_meta('product-desc') : '';
+$args_product = array(
+	'product_name' => $product_name,
+	'product_desc' => $product_desc,
+);
 ?>
 <main class="single-product">
 	<?php get_template_part("components/breadcrumd"); ?>
-	<section class="page-content">
-		<div class="product-info">
-			<div class="container product-container">
-				<div class="row">
-					<div class="col-md-3">
-						<div class="list-thumbnail">
-							<div class="item-thumbnail">
-								<?php echo get_the_post_thumbnail($post_id); ?>
-							</div>
-							<?php
-							foreach ($product_gallery as $key => $value) {
-								?>
-								<div class="item-thumbnail">
-									<img src="<?php echo $value['full_url']; ?>" alt="">
-								</div>
-								<?php
-							}
-							?>
-						</div>
-						<div class="list-gallery">
-							<div class="item-gallery">
-								<?php echo get_the_post_thumbnail($post_id); ?>
-							</div>
-							<?php
-							foreach ($product_gallery as $key => $value) {
-								?>
-								<div class="item-gallery">
-									<img src="<?php echo $value['full_url']; ?>" alt="">
-								</div>
-								<?php
-							}
-							?>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<h1 class="product-title">
-							<?php echo $product_name; ?>
-						</h1>
-						<div class="product-meta">
-							<ul class="list-meta">
-								<li class="item">
-									<div class="list-star">
-										<span class="fa fa-star active"></span>
-										<span class="fa fa-star active"></span>
-										<span class="fa fa-star active"></span>
-										<span class="fa fa-star active"></span>
-										<span class="fa fa-star active"></span>
-									</div>
-								</li>
-								<li class="item">
-									<span><b>5,026</b> Người đánh giá</span>
-								</li>
-								<li class="item">
-									<span><b>6,000</b> Sản phẩm đã bán</span>
-								</li>
-							</ul>
-							<div class="product-price">
-								<span class="regular-price">
-									<?php echo format_price($regular_price); ?>đ
-								</span>
-								<?php if ($sale_price > 0): ?>
-									<span class="sale-price">
-										<?php echo format_price($product_price); ?>đ
-									</span>
-								<?php endif; ?>
-							</div>
-							<div class="product-description">
-								<?php echo $product_desc; ?>
-							</div>
-							<div class="product-action">
-								<div class="product-quantity">
-									<span class="quantity-minus">-</span>
-									<input type="number" value="1" class="input-quantity" min="1">
-									<input type="text" value="<?php echo $post_id; ?>" class="product-id" min="1"
-										hidden>
-									<span class="quantity-plus">+</span>
-								</div>
-								<a href="#" class="buy-now">Mua ngay</a>
-								<a href="#" class="add-to-cart"><img
-										src="<?php echo THEME_URI; ?>/images/icons/shopping-cart.png" alt=""
-										class="img">Thêm
-									vào giỏ hàng</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="loader">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-				<div class="bar4"></div>
-				<div class="bar5"></div>
-				<div class="bar6"></div>
-				<div class="bar7"></div>
-				<div class="bar8"></div>
-				<div class="bar9"></div>
-				<div class="bar10"></div>
-				<div class="bar11"></div>
-				<div class="bar12"></div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part("blocks/product/product-info","top", $args_product); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<h2 class="title-product">
-					<?php echo $product_name; ?>
-				</h2>
-				<div class="product-desc">
-					<?php echo $product_desc; ?>
-				</div>
-				<h2 class="archive-title">Thông Tin Tổng Quan</h2>
-				<div class="product-details">
-					<table class="table-detail">
-						<tr>
-							<td>Thương hiệu</td>
-							<td>Blackmores</td>
-						</tr>
-						<tr>
-							<td>Dạng bào chế</td>
-							<td>Viên nang</td>
-						</tr>
-						<tr>
-							<td>Quy cách sản phẩm</td>
-							<td>30 viên</td>
-						</tr>
-						<tr>
-							<td>Xuất xứ</td>
-							<td>Úc</td>
-						</tr>
-						<tr>
-							<td>Đối tượng</td>
-							<td>Phụ nữ mang bầu, Phụ nữ trước khi mang bầu</td>
-						</tr>
-					</table>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-						ut labore et dolore magna
-						aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-					<img src="<?php echo THEME_URI; ?>/images/product/img-thumb-product.png" alt="">
-				</div>
-				<div class="product-uses">
-					<h2 class="archive-title">Công dụng</h2>
-					<ul class="list-uses">
-						<li class="item">Nâng cao sức đề kháng, cải thiện sức khỏe, bảo vệ cơ thể khỏi các tác
-							nhân gây hại, ngừa bệnh lý thường gặp.</li>
-						<li class="item">Thúc đẩy quá trình lưu thông khí huyết, ổn định huyết áp, tốt cho tim
-							mạch.</li>
-						<li class="item">Bảo vệ chức năng gan, thận, khắc phục các chứng thận hư, cải thiện tình
-							trạng suy thận.</li>
-						<li class="item">Tăng cường chức năng phổi, bảo vệ hệ hô hấp khỏi các tác nhân bên ngoài
-							như thời tiết thay đổi, môi trường ô nhiễm, khói
-							thuốc… Ngăn chặn các bệnh lý như ho, hen suyễn, viêm phế quản…</li>
-						<li class="item">Bổ thận, tốt cho chức năng sinh lý, tăng ham muốn và khoái cảm tình
-							dục, quý ông sung mãn, tăng khả năng cương cứng, kéo
-							dài thời gian quan hệ.</li>
-						<li class="item">Cải thiện trí nhớ, tăng khả năng tập trung, phòng ngừa Alzheimer ở
-							người cao tuổi.</li>
-						<li class="item">Giảm chất béo dư thừa trong cơ thể, giúp cơ thể săn chắc, vóc dáng thon
-							gọn.</li>
-						<li class="item">Thúc đẩy quá trình đào thải độc tố, làm chậm tình trạng lão hóa, giúp
-							trẻ hóa làn da. Rất tốt cho chức năng sinh lý nữ,
-							làm chậm quá trình mãn kinh, tiền kinh…</li>
-						<li class="item">Tốt cho chức năng xương khớp, giảm tình trạng đau lưng, mỏi gối, cơ thể
-							khỏe mạnh, linh hoạt</li>
-						<li class="item">Bảo vệ hệ tiêu hóa, tăng cường chức năng dạ dày, người dùng hấp thụ
-							dưỡng chất tốt, ăn ngon, cơ thể khỏe mạnh, giảm nguy
-							cơ mắc các chứng bệnh như đau dạ dày, viêm loét..</li>
-						<li class="item">Đặc biệt, đông trùng hạ thảo còn có tác dụng ức chế tế bào ung thư, làm
-							chậm quá trình di căn. Được sử dụng hỗ trợ điều
-							trị ung thư, tốt cho người bệnh trong quá trình hóa trị, xạ trị</li>
-					</ul>
-				</div>
-				<img src="<?php echo THEME_URI; ?>/images/product/img-product-2.png" alt="" class="img-uses">
-				<h2 class="archive-title">Công dụng</h2>
+				<?php get_template_part("blocks/product/product","info",$args_product); ?>
+				<?php get_template_part("blocks/product/product", "uses"); ?>
+				<h2 class="archive-title">Đối Tượng Sử Dụng</h2>
 				<div class="product-advice">
 					<div class="table-advide">
 						<table>
@@ -271,7 +99,7 @@ if ($sale_price > 0) {
 						</div>
 					</div>
 				</div>
-				<h2 class="archive-title">Cách dùng</h2>
+				<h2 class="archive-title">Cách Dùng</h2>
 				<div class="product-using">
 					<ul class="list-using">
 						<li class="item">Ăn trực tiếp: 100% đông trùng hạ thảo Vietfarm trước khi đến tay người
@@ -298,7 +126,7 @@ if ($sale_price > 0) {
 					</ul>
 					<img src="<?php echo THEME_URI; ?>/images/product/product-7.png" alt="">
 				</div>
-				<h2 class="archive-title">Lưu ý khi sử dụng</h2>
+				<h2 class="archive-title">Lưu Ý Khi Sử Dụng</h2>
 				<div class="product-using">
 					<ul class="list-using">
 						<li class="item">Ăn trực tiếp: 100% đông trùng hạ thảo Vietfarm trước khi đến tay người
@@ -346,7 +174,7 @@ if ($sale_price > 0) {
 					</ul>
 				</div>
 				<h2 class="archive-title">Bình Luận</h2>
-				<div id="comments" class="comments-area clearfix  ">
+				<div id="comments" class="comments-area clearfix">
 					<p class="comment-section-title">Nội dung bình luận</p>
 					<form action="" class="comment-form" id="commentform">
 						<div class="row row-field">

@@ -7,11 +7,11 @@ $regular_price = $product_price;
 if ($sale_price > 0) {
 	$regular_price = $sale_price;
 }
-$total_buy = get_post_meta(get_the_ID(),'total-buy',true) ? get_post_meta(get_the_ID(),'total-buy',true) : rand(10,100);
+$total_buy = get_post_meta(get_the_ID(), 'total-buy', true) ? get_post_meta(get_the_ID(), 'total-buy', true) : rand(10, 100);
 ?>
 <div class="post-product product-big">
 	<a href="<?php echo get_the_permalink(); ?>" class="product-image">
-		<?php echo get_the_post_thumbnail($post_id); ?>
+		<?php echo get_the_post_thumbnail(); ?>
 	</a>
 	<div class="product-meta">
 		<div class="product-info">
@@ -24,11 +24,11 @@ $total_buy = get_post_meta(get_the_ID(),'total-buy',true) ? get_post_meta(get_th
 		</div>
 		<div class="product-view">
 			<div class="product-star">
-				<span class="fa fa-star active"></span>
-				<span class="fa fa-star active"></span>
-				<span class="fa fa-star active"></span>
-				<span class="fa fa-star active"></span>
-				<span class="fa fa-star active"></span>
+				<?php
+				if (function_exists('kk_star_ratings')):
+					echo kk_star_ratings();
+				endif;
+				?>
 			</div>
 			<div class="product-price">
 				<span class="regular-price">
@@ -40,7 +40,9 @@ $total_buy = get_post_meta(get_the_ID(),'total-buy',true) ? get_post_meta(get_th
 					</span>
 				<?php endif; ?>
 			</div>
-			<p class="sell-number"><b>Số lượng bán: </b><?php echo $total_buy;  ?> sản phẩm</p>
+			<p class="sell-number"><b>Số lượng bán: </b>
+				<?php echo $total_buy; ?> sản phẩm
+			</p>
 		</div>
 		<div class="product-action">
 			<a href="<?php echo get_the_permalink(); ?>" class="product-more">Chi tiết</a>

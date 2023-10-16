@@ -13,8 +13,10 @@ if( !function_exists('theme_short_title') ){
  * Short content theme
  */
 if( !function_exists('theme_short_content') ){
-	function theme_short_content( $number_word = 20 ){
-		$content = get_the_content();
+	function theme_short_content($content ='', $number_word = 20 ){
+		if(!$content){
+			$content = get_the_content();
+		}
 		return wp_trim_words( $content , $number_word );
 	}
 }
