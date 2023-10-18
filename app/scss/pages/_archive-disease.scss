@@ -1,0 +1,38 @@
+.list-disease{
+	margin-bottom: 50px;
+	.disease-item{
+		margin-bottom: 16px;
+	}
+	.disease-inner{
+		padding: 12px;
+		background: #E6F3ED;
+		border-radius: 10px;
+		display: flex;
+		height: 100%;
+	}
+
+	.inner-title{
+		font-size: 16px;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+	.inner-img{
+		margin-right: 14px;
+		flex-shrink: 0;
+	}
+}
+.disease-content{
+	margin-bottom: 50px;
+	p{
+		margin-bottom: 50px;
+	}
+	img{
+		display: block;
+		margin: 0 auto;
+	}
+}
+.archive-disease{
+	.list-doctor{
+		margin-bottom: 50px;
+	}
+}

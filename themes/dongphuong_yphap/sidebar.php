@@ -100,9 +100,9 @@ if (is_author()) {
 			foreach ($time as $key => $value) {
 				?>
 				<div class="date-item" data-value="<?php echo $value['form-time'] ?>">
-					<input class="form-check-input" type="radio" name="time-hours" id="raidio1"
+					<input class="form-check-input" type="radio" name="time-hours" id="raidio<?php echo $key; ?>"
 						value="<?php echo $value['form-time'] ?>" hidden="">
-					<label class="item-title" for="raidio1">
+					<label class="item-title" for="raidio<?php echo $key; ?>">
 						<?php echo $value['form-time'] ?>
 					</label>
 				</div>

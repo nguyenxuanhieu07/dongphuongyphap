@@ -17,6 +17,7 @@
 			text-decoration: none;
 			display: flex;
 			align-items: center;
+			margin-right: 25px;
 		}
 
 		.header-img {
@@ -59,18 +60,53 @@
 	.main-menu {
 		width: 100%;
 		justify-content: space-between;
-		li{
+
+		li {
 			.nav-link {
 				color: $black;
 				font-weight: 700;
 				padding: 0;
 			}
-			&:hover{
-				.dropdown-menu{
+
+			&:hover {
+				.dropdown-menu {
 					display: block;
 					margin-top: 0;
 				}
 			}
+		}
+	}
+}
+
+.mini-cart {
+	padding: 6px 15px;
+	border-radius: 18px;
+	background: #F5F5F7;
+	position: relative;
+
+	img {
+		margin-right: 0;
+		width: 26px;
+		height: 23px;
+	}
+
+	.number-cart {
+		position: absolute;
+		top: -10px;
+		right: 0;
+		background: yellow;
+		width: 18px;
+		height: 18px;
+		text-align: center;
+		font-size: 12px;
+		border-radius: 10px;
+		font-weight: 500;
+		line-height: 18px;
+		color: $green;
+	}
+	.table-collaterals{
+		th{
+			min-width: 100px;
 		}
 	}
 }

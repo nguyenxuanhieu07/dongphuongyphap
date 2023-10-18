@@ -9,123 +9,15 @@ $args_product = array(
 ?>
 <main class="single-product">
 	<?php get_template_part("components/breadcrumd"); ?>
-	<?php get_template_part("blocks/product/product-info","top", $args_product); ?>
+	<?php get_template_part("components/notification"); ?>
+	<?php get_template_part("blocks/product/product-info", "top", $args_product); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<?php get_template_part("blocks/product/product","info",$args_product); ?>
+				<?php get_template_part("blocks/product/product", "info", $args_product); ?>
 				<?php get_template_part("blocks/product/product", "uses"); ?>
-				<h2 class="archive-title">Đối Tượng Sử Dụng</h2>
-				<div class="product-advice">
-					<div class="table-advide">
-						<table>
-							<tr>
-								<td>
-									<h3 class="title-advice should-advide">Đối tượng <span class="title-child">Nên
-											sử
-											dụng</span></h3>
-								</td>
-								<td>
-									<h3 class="title-advice not-should-advide">Đối tượng <span class="title-child">Không
-											nên
-											sử dụng</span>
-									</h3>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<ul class="list-should">
-										<li class="item">Người có sức đề kháng kém, dễ bị ốm, cảm do thay đổi
-											thời
-											tiết, mắc các bệnh ho, viêm phổi, viêm phế quản… </li>
-										<li class="item">Sử dụng cho người cao tuổi, người thường xuyên mất ngủ,
-											ăn
-											uống kém, trí nhớ giảm sút, cơ thể mệt mỏi…</li>
-										<li class="item">Người bị suy giảm chức năng gan, mắc các bệnh như viêm
-											gan,
-											xơ gan, gan nhiễm mỡ…</li>
-										<li class="item">Người bị thận yếu, xuất hiện các triệu chứng của tiểu
-											đêm,
-											tiểu buốt… hay suy giảm chức năng sinh lý, rối loạn cương
-											dương, xuất tinh sớm…</li>
-										<li class="item">Dùng cho phụ nữ tuổi tiền mãn kinh, hay phụ nữ có nhu
-											cầu
-											làm đẹp, thon gọn vóc dáng</li>
-										<li class="item">Sử dụng với người bệnh đang trong quá trình hoá trị, xạ
-											trị,…(cần tham khảo ý kiến bác sĩ)</li>
-									</ul>
-								</td>
-								<td>
-									<ul class="list-not-should">
-										<li class="item">Trẻ em dưới 5 tuổi không được sử dụng.</li>
-										<li class="item">Không dùng cho phụ nữ có thai, phụ nữ đang cho con bú
-											hoặc đang trong kỳ kinh nguyệt.</li>
-										<li class="item">Người bị suy giảm chức năng gan, mắc các bệnh như viêm
-											gan,
-											xơ gan, gan nhiễm mỡ…</li>
-										<li class="item">Không dùng có người bị dị ứng nhộng tằm</li>
-										<li class="item">Không dùng cho bệnh nhân bị rối loạn đông máu hoặc
-											chuẩn bị phẫu thuật.</li>
-									</ul>
-								</td>
-							</tr>
-						</table>
-					</div>
-					<div class="box-list">
-						<div class="item-top">
-							<img src="<?php echo THEME_URI; ?>/images/product/advide-1.png" alt="" class="item-imge">
-						</div>
-						<div class="list-adive-bottom">
-							<div class="inner">
-								<img src="<?php echo THEME_URI; ?>/images/product/advide-1.png" alt=""
-									class="item-imge">
-							</div>
-							<div class="inner">
-								<img src="<?php echo THEME_URI; ?>/images/product/advide-2.png" alt=""
-									class="item-imge">
-							</div>
-							<div class="inner">
-								<img src="<?php echo THEME_URI; ?>/images/product/advide-3.png" alt=""
-									class="item-imge">
-							</div>
-							<div class="inner">
-								<img src="<?php echo THEME_URI; ?>/images/product/advide-2.png" alt=""
-									class="item-imge">
-							</div>
-							<div class="inner">
-								<img src="<?php echo THEME_URI; ?>/images/product/advide-1.png" alt=""
-									class="item-imge">
-							</div>
-						</div>
-					</div>
-				</div>
-				<h2 class="archive-title">Cách Dùng</h2>
-				<div class="product-using">
-					<ul class="list-using">
-						<li class="item">Ăn trực tiếp: 100% đông trùng hạ thảo Vietfarm trước khi đến tay người
-							tiêu dùng đều đã được tuyển chọn, làm sạch và khử
-							trùng công nghệ cao. Do vậy, người dùng hoàn toàn có thể nhai, ăn trực tiếp. Cảm
-							nhận hương vị của đông trùng hạ thảo tự
-							nhiên.</li>
-						<li class="item">Nấu cùng thức ăn: Bỏ khoảng 7 – 10 sợi đông trùng hạ thảo vào thức ăn
-							đã được nấu chín, sau đó tắt bếp và đảo đều. Với
-							cách này hoạt chất trong dược liệu sẽ được hòa tan cùng thức ăn và đi vào cơ thể.
-							Một số món ăn nổi bật như cháo đông
-							trùng hạ thảo, gà hầm đông trùng hạ thảo…</li>
-						<li class="item">Pha trà đông trùng hạ thảo: Cho khoảng 4-5 sợi đông trùng vào bình trà,
-							rồi đổ nước ấm 70 – 80 độ C vào, đợi trong 3-5
-							phút có thể thưởng thức</li>
-						<li class="item">Đông trùng hạ thảo ngâm mật ong: Ngâm 20gr đông trùng hạ thảo cùng
-							600ml mật ong, để nơi khô ráo, tránh ánh nắng trực
-							tiếp. Sau 2 tuần có thể sử dụng. Mỗi lần dùng 5-10ml cùng 4-5 sợi đông trùng hạ thảo
-							cùng nước ấm.</li>
-						<li class="item">Ngâm rượu đông trùng hạ thảo: Ngâm 20 – 25gr đông trùng hạ thảo sấy
-							thăng hoa cùng 1 – 2 lít rượu 30 – 35 độ. Bảo quản
-							nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Ngâm đủ 1 tháng là có thể sử
-							dụng. Mỗi lần dùng 1 – 2 chén nhỏ.</li>
-					</ul>
-					<img src="<?php echo THEME_URI; ?>/images/product/product-7.png" alt="">
-				</div>
+				<?php get_template_part("blocks/product/product", "uses-object"); ?>
+				<?php get_template_part("blocks/product/product", "usesing"); ?>
 				<h2 class="archive-title">Lưu Ý Khi Sử Dụng</h2>
 				<div class="product-using">
 					<ul class="list-using">

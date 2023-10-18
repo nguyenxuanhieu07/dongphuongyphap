@@ -255,7 +255,7 @@ var product_action={
 	quantity_minus: function() {
 		var minus=$('.product-quantity .quantity-minus');
 		minus.on('click',function() {
-			var input=$('.product-quantity .input-quantity'),
+			var input=$(this).parent().find('.input-quantity'),
 				val=parseInt(input.val());
 			if(val > 1) {
 				var val_new=val-1;
@@ -266,7 +266,7 @@ var product_action={
 	quantity_plus: function() {
 		var plus=$('.product-quantity .quantity-plus');
 		plus.on('click',function() {
-			var input=$('.product-quantity .input-quantity'),
+			var input=$(this).parent().find('.input-quantity'),
 				val=parseInt(input.val());
 			var val_new=val+1;
 			input.val(val_new);

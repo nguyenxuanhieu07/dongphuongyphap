@@ -225,6 +225,10 @@ require_once(__DIR__) . '/modules/theme-options/theme-option.php';
  * Insert function comment
  */
 require_once(__DIR__) . '/modules/comment/init.php';
+/**
+ * Insert function cart
+ */
+require_once(__DIR__) . '/modules/cart/init.php';
 
 /**
  * disable block editor

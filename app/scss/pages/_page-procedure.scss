@@ -24,12 +24,14 @@
 	margin-bottom: 60px;
 	list-style: none;
 	padding-left: 20px;
+	position: relative;
 
 	.item {
 		background: #E6F3ED;
 		border-radius: 10px;
 		margin-bottom: 25px;
 		position: relative;
+		min-height: 120px;
 
 		&::before {
 			content: '\f111';
@@ -86,6 +88,17 @@
 		color: $green;
 		margin-bottom: 7px;
 	}
+
+	&::after {
+		content: '';
+		border: 1px solid #048449;
+		border-style: dashed;
+		position: absolute;
+		left: 2px;
+		top: 64px;
+		transform: translateX(50%);
+		height: 83%;
+	}
 }
 
 .list-option-book {
@@ -94,7 +107,7 @@
 	.book-text {
 		color: $green;
 		font-size: 16px;
-		font-weight: 700;
+		font-family: 'nunitosan-semmibold';
 		margin-bottom: 16px;
 	}
 
@@ -136,5 +149,30 @@
 
 	.box-4 {
 		background: #68B592;
+	}
+}
+
+.page-slider {
+	img {
+		height: 100%;
+	}
+
+	.slider-inner {
+		height: 100%;
+		position: relative;
+	}
+
+	.slide-title {
+		position: absolute;
+		color: #FEFDBC;
+		margin-bottom: 0;
+		font-size: 32px;
+		font-weight: 700;
+		text-transform: uppercase;
+		top: 50%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
 	}
 }

@@ -2,7 +2,7 @@
 	background: #E6F3ED;
 	margin-bottom: 0;
 	.item{
-		&:first-child{
+		&:not(:last-child){
 			.breadcrumb-link{
 				color: $green;
 			}

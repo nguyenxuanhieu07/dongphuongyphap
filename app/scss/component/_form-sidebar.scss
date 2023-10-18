@@ -1,8 +1,8 @@
-.form-rigister {
+.form-booking {
 	padding: 16px;
 	border: 1px solid $green;
 	border-radius: 10px;
-
+	margin-bottom: 24px;
 	.form-title {
 		font-size: 20px;
 		color: $green;
@@ -38,9 +38,12 @@
 			color: #B7B9BC;
 		}
 	}
-	.booking-date{
+
+	.booking-date {
+		position: absolute;
 		opacity: 0;
 	}
+
 	.btn-send {
 		background: $green;
 		color: $lingt;
@@ -95,8 +98,8 @@
 		border-radius: 5px;
 		text-align: center;
 		cursor: pointer;
-
-		.item-title {
+		opacity: 0.5;
+		.item-title {	
 			margin-bottom: 0;
 			font-size: 16px;
 			font-weight: 700;
@@ -129,9 +132,15 @@
 		}
 	}
 
+	.date-more {
+		position: relative;
+		opacity: 1;
+	}
+
 	.active {
 		border: 1px solid $green;
 		color: $green;
+		opacity: 1 !important;
 	}
 }
 

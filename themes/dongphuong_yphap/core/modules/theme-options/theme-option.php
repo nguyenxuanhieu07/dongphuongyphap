@@ -84,6 +84,14 @@ if (!function_exists('theme_option_meta_box')) {
             'settings_pages' => 'option_pages',
             'fields'         => array(
                 array(
+                    'name'        => 'Trang Giỏ hàng',
+                    'placeholder' => 'Lựa chọn',
+                    'id'          => 'page-cart',
+                    'type'        => 'select_advanced',
+                    'options'     => $option_page,
+                    'multiple'    => false,
+                ),
+                array(
                     'name'        => 'Trang thanh toán',
                     'placeholder' => 'Lựa chọn',
                     'id'          => 'page-checkout',
@@ -99,6 +107,7 @@ if (!function_exists('theme_option_meta_box')) {
                     'options'     => $option_page,
                     'multiple'    => false,
                 ),
+                
             ),
         );
         return $meta_boxes;

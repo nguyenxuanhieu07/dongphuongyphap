@@ -38,11 +38,11 @@ get_header();
                                         ?>
                                         <div class="cart-item">
                                             <div class="cart-item-info">
-                                                <a href="#" class="product-images">
+                                                <a href="<?php echo get_the_permalink($cart_item['product_id']); ?>" class="product-images">
                                                     <img src="<?php echo $product_img_url; ?>" alt="">
                                                 </a>
                                                 <div class="item-info">
-                                                    <h3 class="product-title"><a href="#" class="text-link">
+                                                    <h3 class="product-title"><a href="<?php echo get_the_permalink($cart_item['product_id']); ?>" class="text-link">
                                                             <?php echo $cart_item['product_name']; ?>
                                                         </a></h3>
                                                     <p class="info-text"><span>Số lượng x
@@ -110,7 +110,8 @@ get_header();
                 </form>
             <?php else: ?>
                 <div class="thank-you">
-                    <img src="<?php echo THEME_URI; ?>/images/thankyou.jpg" alt="" class="img-thank">
+                    <h1 class="page-title">Bạn đã đặt hàng thành công !</h1>
+                   
                     <a href="<?php echo home_url(); ?>" class="btn-home">Quay về trang chủ</a>
                 </div>
             <?php endif; ?>

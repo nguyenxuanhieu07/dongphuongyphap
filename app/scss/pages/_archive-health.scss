@@ -1,0 +1,68 @@
+.archive-health {
+	.breadcrumb {
+		margin-bottom: 50px;
+	}
+}
+
+.short-desc {
+	margin-bottom: 50px;
+}
+
+.list-sick {
+	padding-left: 15px;
+	margin-bottom: 50px;
+
+	.sick-item {
+		margin-bottom: 12px;
+		font-weight: 700;
+		font-size: 16px;
+	}
+}
+
+.archive-list-product {
+	margin-bottom: 50px;
+
+	.post {
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba($color: #B7B9BC, $alpha: 0.2);
+		padding: 16px;
+	}
+
+	.post-thumbnail {
+		height: 218px;
+		aspect-ratio: 163/109;
+		margin-bottom: 16px;
+	}
+
+	.post-title {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+
+	.post-meta {
+		display: block;
+	}
+
+	.post-desc {
+		color: #111111;
+		margin-bottom: 0;
+	}
+
+	.post-small {
+		display: flex;
+		.post-thumbnail {
+			flex-shrink: 0;
+			height: 99px;
+			aspect-ratio: 148/99;
+			margin-bottom: 0;
+			margin-right: 16px;
+		}
+
+		.post-title {
+			font-size: 16px;
+		}
+		&:not(:last-child){
+			margin-bottom: 16px;
+		}
+	}
+}

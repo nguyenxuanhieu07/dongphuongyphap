@@ -23,9 +23,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 
-.box-author-doctor .box-avatar{
+.box-author-doctor .box-avatar {
 	flex-shrink: 0;
 }
+
 .archive-doctors .post-doctor .post-doctor-thumbnail img {
 	border-radius: 50%;
 }
@@ -178,6 +179,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	background: #f2a82f;
 	color: #fff;
 }
+
 .page-map .multi-collapse {
 	padding: 16px;
 }
@@ -202,22 +204,60 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-weight: 700;
 	border-radius: 20px;
 }
-.form-booking .list-time{
+
+.form-booking .list-time {
 	flex-wrap: wrap;
 }
-.post-doctor .post-info{
+
+.post-doctor .post-info {
 	width: 50%;
 }
-.taxonomy-product .product-description{
+
+.taxonomy-product .product-description {
 	font-size: 14px;
 	width: 100%;
 	background: transparent;
 	margin-bottom: 8px;
 	padding: 0;
 }
-.product-big .product-image{
+
+.product-big .product-image {
 	height: 229px;
 }
-.kksr-legend{
+
+.kksr-legend {
 	display: none;
+}
+
+.notification {
+	padding: 16px;
+	background: #e6f3ed;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	display: none;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.notification .view-cart {
+	background: #f2a82f;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 8px;
+	border-radius: 5px;
+	flex-shrink: 0;
+}
+.notification .view-cart:hover{
+	background-color: #048449;
+}
+.dpyp-hide{
+	opacity: .5;
+	pointer-events: none;
+}
+.product-using ul {
+	padding-left: 15px;
+}
+.product-using ul li:not(:last-child){
+	margin-bottom: 15px;
 }

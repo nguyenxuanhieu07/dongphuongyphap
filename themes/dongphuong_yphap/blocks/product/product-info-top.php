@@ -1,7 +1,7 @@
 <?php
 $post_id         = get_the_ID();
 $product_name    = $args['product_name'];
-$product_gallery = rwmb_meta('product-gallery') ? rwmb_meta('product-gallery') : '';
+$product_gallery = rwmb_meta('product-gallery') ? rwmb_meta('product-gallery') : [];
 $product_price   = rwmb_meta('product-price') ? rwmb_meta('product-price') : 0;
 $sale_price      = rwmb_meta('product-sale') ? rwmb_meta('product-sale') : 0;
 $product_desc    = $args['product_desc'];

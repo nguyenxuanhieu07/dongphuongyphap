@@ -1,0 +1,45 @@
+.list-disease {
+  margin-bottom: 50px;
+}
+
+.list-disease .disease-item {
+  margin-bottom: 16px;
+}
+
+.list-disease .disease-inner {
+  padding: 12px;
+  background: #E6F3ED;
+  border-radius: 10px;
+  display: flex;
+  height: 100%;
+}
+
+.list-disease .inner-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.list-disease .inner-img {
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.disease-content {
+  margin-bottom: 50px;
+}
+
+.disease-content p {
+  margin-bottom: 50px;
+}
+
+.disease-content img {
+  display: block;
+  margin: 0 auto;
+}
+
+.archive-disease .list-doctor {
+  margin-bottom: 50px;
+}
+
+/*# sourceMappingURL=../maps/pages/archive-disease.css.map */

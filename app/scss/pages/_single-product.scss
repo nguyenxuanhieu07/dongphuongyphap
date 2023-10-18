@@ -65,7 +65,7 @@
 		margin-bottom: 26px;
 	}
 
-	.item-top{
+	.item-top {
 		.item-imge {
 			height: 492px;
 			margin-bottom: 0;
@@ -99,6 +99,70 @@
 
 	img {
 		margin-bottom: 48px;
+	}
+
+	table {
+		background: #F5F5F7;
+		width: 100%;
+		border: 1px solid #F5F5F7;
+		border-radius: 12px;
+		overflow: hidden;
+		margin-bottom: 24px;
+
+		tr {
+			td {
+				&:first-child {
+					padding: 18px 21px 14px 21px;
+					font-weight: 700;
+				}
+
+				&:last-child {
+					background: $lingt;
+					padding-left: 15px;
+				}
+			}
+
+			&:not(:last-child) {
+				border: 2px solid $lingt;
+			}
+		}
+	}
+}
+
+.product-quantity {
+	display: flex;
+	margin-right: 23px;
+
+	.quantity-minus {
+		margin-right: 5px;
+	}
+
+	.quantity-minus,
+	.quantity-plus {
+		width: 30px;
+		height: 30px;
+		background-color: #F5F5F7;
+		border-radius: 50px;
+		display: block;
+		font-size: 16px;
+		text-align: center;
+		font-family: 'nunitosan-semmibold';
+		padding-top: 3px;
+		cursor: pointer;
+	}
+
+	.input-quantity {
+		width: 35px;
+		margin-right: 5px;
+		border: none;
+		border-bottom: 1px solid #B7B9BC;
+		text-align: center;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
 	}
 }
 
@@ -156,43 +220,6 @@
 		display: flex;
 		align-items: center;
 
-		.product-quantity {
-			display: flex;
-			margin-right: 23px;
-		}
-
-		.quantity-minus {
-			margin-right: 5px;
-		}
-
-		.quantity-minus,
-		.quantity-plus {
-			width: 30px;
-			height: 30px;
-			background-color: #F5F5F7;
-			border-radius: 50px;
-			display: block;
-			font-size: 16px;
-			text-align: center;
-			font-family: 'nunitosan-semmibold';
-			padding-top: 3px;
-			cursor: pointer;
-		}
-
-		.input-quantity {
-			width: 35px;
-			margin-right: 5px;
-			border: none;
-			border-bottom: 1px solid #B7B9BC;
-			text-align: center;
-
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-				margin: 0;
-			}
-		}
-
 		.buy-now {
 			padding: 6px 18px;
 			font-size: 16px;
@@ -228,32 +255,7 @@
 	}
 }
 
-.table-detail {
-	background: #F5F5F7;
-	width: 100%;
-	border: 1px solid #F5F5F7;
-	border-radius: 12px;
-	overflow: hidden;
-	margin-bottom: 24px;
 
-	tr {
-		td {
-			&:first-child {
-				padding: 18px 21px 14px 21px;
-				font-weight: 700;
-			}
-
-			&:last-child {
-				background: $lingt;
-				padding-left: 15px;
-			}
-		}
-
-		&:not(:last-child) {
-			border: 2px solid $lingt;
-		}
-	}
-}
 
 .product-uses {
 	padding: 19px;
@@ -292,57 +294,51 @@
 	}
 }
 
-.table-advide {
+.product-object {
 	background: #EFF1F3;
 	border-radius: 12px;
-	//padding: 20px 17px;
-	margin-bottom: 41px;
+	margin-bottom: 35px;
+	display: flex;
 	overflow: hidden;
 
-	.title-advice {
+	.object-item {
+		width: 50%;
+	}
+
+	.title-object {
 		font-size: 18px;
-		font-weight: 700;
 		text-align: center;
-		margin-bottom: 0;
+		padding-top: 20px;
+		padding-bottom: 18px;
+		border-bottom: 3px solid #FAFAFB;
+		font-weight: 700;
 
 		.title-child {
 			text-transform: uppercase;
+		}
+	}
+
+	.uses-object {
+		background: #F5F5F7;
+
+		.title-child {
 			color: $green;
 		}
 	}
 
-	.not-should-advide {
+	.not-uses-object {
 		.title-child {
 			color: $yellow;
 		}
 	}
 
-	.item {
-		&:not(:last-child) {
-			margin-bottom: 15px;
-		}
-	}
+	.list-object {
+		padding: 17px 15px 25px 35px;
+		margin-bottom: 0;
 
-	table {
-		width: 100%;
-
-		tr {
-			td {
-				padding-right: 15px;
-				padding-top: 17px;
-				width: 50%;
-
-				&:first-child {
-					background: #F5F5F7;
-				}
-			}
-
-			&:first-child {
-				td {
-
-					padding: 20px 17px;
-					border-bottom: 2px solid $lingt;
-				}
+		.item {
+			&:not(:last-child) {
+				margin-bottom: 15px;
 			}
 		}
 	}
