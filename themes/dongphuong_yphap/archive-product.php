@@ -3,7 +3,7 @@ get_header();
 ?>
 <main class="archive-products">
 	<?php get_template_part("components/breadcrumd"); ?>
-	<?php get_template_part("components/banner","top"); ?>
+	<?php get_template_part("components/banner", "top"); ?>
 	<?php
 	$terms = get_terms(
 		array(
@@ -48,15 +48,16 @@ get_header();
 							$list_post->the_post();
 							?>
 							<div class="col-md-3">
-								<?php get_template_part("components/post","product"); ?>
+								<?php get_template_part("components/post", "product"); ?>
 							</div>
 							<?php
 						endwhile;
+						wp_reset_postdata();
 					}
 					?>
 				</div>
 			<?php } ?>
-	
+
 		</div>
 	</section>
 </main>

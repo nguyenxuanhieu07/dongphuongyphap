@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dongphuong_yphap
+ * @package wiki_nhakhoa
  */
 
 /*
@@ -15,63 +15,91 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if (post_password_required()) {
 	return;
 }
 ?>
+<div id="comments" class="comments-area clearfix  ">
+	<?php
 
-<div id="comments" class="comments-area">
+	if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type(), 'comments')):
+		?>
+		<p class="no-comments">
+			<?php _e('Comments are closed.', '_mbbasetheme'); ?>
+		</p>
+	<?php endif; ?>
+	<?php
+	ob_start();
+	?>
+	<textarea class="form-control" id="comment" name="comment"
+		placeholder="Mô tả chi tiết về trải nghiệm của bạn tại nha khoa" rows="5" aria-required="true"></textarea>
 
 	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	$html = ob_get_clean();
+	$args = array(
+		'fields'              => apply_filters(
+			'comment_form_default_fields',
+			array(
+				'author' => '<div class="form-row mb-3">
+				<div class="col-md-6">
+					<input type="text" class="form-control ip-custom" placeholder="Họ tên *"
+						name="author" required>
+				</div>'
+				,
+				'email'  => '<div class="col-md-6">
+				<input type="email" class="form-control ip-custom" placeholder="Email *"
+					name="email" required>
+				</div>
+				</div>',
+			)
+		),
+		'comment_field'       => $html,
+		'comment_notes_after' => '',
+		'title_reply'         => '',
+		'label_submit'        => 'Gửi đánh giá',
+		'title_reply_to'      => __('Trả lời %s'),
+		'cancel_reply_link'   => __('Hủy trả lời'),
+	);
+	comment_form($args);
+	?>
+	<?php if (have_comments()): ?>
+		<?php
+		$current_post_id = get_the_ID();
+		$comment_number  = get_comments_number($current_post_id);
 		?>
-		<h2 class="comments-title">
-			<?php
-			$dongphuong_yphap_comment_count = get_comments_number();
-			if ( '1' === $dongphuong_yphap_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'dongphuong_yphap' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $dongphuong_yphap_comment_count, 'comments title', 'dongphuong_yphap' ) ),
-					number_format_i18n( $dongphuong_yphap_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
+		<h3 class="comment-section-title">Bình luận (<span style="color:#e54807;">
+				<?php echo $comment_number; ?>
+			</span>)</h3>
+		<a href="#" id="show-list-comment"></a>
 		<ol class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'type'        => 'comment',
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'reply_text'  => 'Trả lời',
+					'callback'    => 'wb_theme_comment',
+					'avatar_size' => 50
 				)
 			);
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dongphuong_yphap' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
-
+		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')): ?>
+			<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+				<h4 class="screen-reader-text">
+					<?php _e('Xem thêm bình luận', '_mbbasetheme'); ?>
+				</h4>
+				<div class="nav-previous">
+					<?php previous_comments_link(__('&larr; Bình luận cũ hơn', '_mbbasetheme')); ?>
+				</div>
+				<div class="nav-next">
+					<?php next_comments_link(__('Bình luận mới nhất &rarr;', '_mbbasetheme')); ?>
+				</div>
+			</nav>
+		<?php endif; ?>
+	<?php else: ?>
+		<p class="response-none">Trở thành người đầu tiên bình luận cho bài viết này!</p>
+	<?php endif; ?>
 </div><!-- #comments -->

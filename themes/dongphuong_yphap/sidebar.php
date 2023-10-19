@@ -35,7 +35,9 @@ if (is_author()) {
 		<textarea class="form-control control-custom" id="note" rows="3" name="note"
 			placeholder="Vấn đề đang gặp phải"></textarea>
 	</div>
-
+	<?php 
+		if(!is_singular(['post','acupoints'])):
+	?>
 	<div class="form-group">
 		<label class="form-lable" for="select_basis">Lựa chọn cơ sở *</label>
 		<select id="select_basis" name="basis" class="form-control control-custom" <?php if ($check_author)
@@ -110,5 +112,6 @@ if (is_author()) {
 			<input type="text" name="booking-time" hidden>
 		</div>
 	</div>
+	<?php endif; ?>
 	<button class="form-control btn-send">Gửi thông tin</button>
 </form>

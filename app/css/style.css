@@ -2906,6 +2906,82 @@ a:hover {
   margin-bottom: 16px;
 }
 
+.list-symptom {
+  padding: 10px;
+  background: #F5F5F7;
+  border-radius: 10px;
+}
+
+.list-symptom .form-lable {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.list-symptom input {
+  margin-right: 10px;
+}
+
+.list-symptom .item-systom:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.post-best-view {
+  padding: 16px;
+  background: #FEF6EA;
+  border-radius: 10px;
+  position: relative;
+}
+
+.post-best-view .archive-title {
+  font-size: 20px;
+}
+
+.post-best-view .archive-title::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background: #048449;
+  left: 0;
+  top: 4px;
+}
+
+.post-best-view .post {
+  display: flex;
+}
+
+.post-best-view .post-thumbnail {
+  height: 84px;
+  aspect-ratio: 125/84;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.post-best-view .post-title {
+  font-size: 14px;
+}
+
+.post-best-view .post-title a:hover {
+  color: #048449;
+}
+
+.post-best-view .post:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.post-best-view::after {
+  content: '';
+  position: absolute;
+  background: #F2A82F;
+  height: 20px;
+  width: 100%;
+  bottom: -13px;
+  left: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: -1;
+}
+
 .page-author .breadcrumb {
   margin-bottom: 50px;
 }

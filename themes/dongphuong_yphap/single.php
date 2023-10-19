@@ -8,33 +8,40 @@
  */
 
 get_header();
-?>
+$check_content = rwmb_meta('post_enable_structure') ? rwmb_meta('post_enable_structure') : '';
+if ($check_content):
+	while (have_posts()):
+		the_post();
 
-	<main id="primary" class="site-main">
+		get_template_part('template-parts/single', 'post-new');
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	endwhile;
+else:
+	?>
+	<main class="page-content" id="page-content">
+		<div class="container">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<?php get_template_part("template-parts/content", "breadcrumb"); ?>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'dongphuong_yphap' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'dongphuong_yphap' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			<div class="row">
+				<div class="col-md-9">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<?php
+					while (have_posts()):
+						the_post();
 
-		endwhile; // End of the loop.
-		?>
+						get_template_part('template-parts/content', 'single-post'); ?>
 
-	</main><!-- #main -->
+					<?php endwhile; ?>
 
-<?php
-get_sidebar();
+				</div>
+
+				<?php get_sidebar(); ?>
+
+			</div>
+		</div>
+	</main>
+
+	<?php
+endif;
 get_footer();

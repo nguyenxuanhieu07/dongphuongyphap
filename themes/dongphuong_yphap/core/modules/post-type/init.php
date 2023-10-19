@@ -3,10 +3,10 @@
 // * testinomial 
 // */
 // require (__DIR__) . '/testinomial/init.php';
-///**
-// * Video 
-// */
-//require(__DIR__) . '/video/init.php';
+/**
+ * Video 
+ */
+require(__DIR__) . '/video/init.php';
 ///**
 // * faq 
 // */

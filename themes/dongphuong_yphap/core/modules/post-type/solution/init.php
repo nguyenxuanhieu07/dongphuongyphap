@@ -105,7 +105,7 @@ if (!function_exists('wb_create_specialize')) {
 			'show_tagcloud'     => true,
 			'rewrite'           => $rewrite,
 		);
-		register_taxonomy('specialize', array('solution','disease','acupoints','post','products'), $args);
+		register_taxonomy('specialize', array('solution','disease','acupoints','post','product'), $args);
 
 	}
 	add_action('init', 'wb_create_specialize', 0);

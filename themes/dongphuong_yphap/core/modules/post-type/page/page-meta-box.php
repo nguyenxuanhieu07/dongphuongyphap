@@ -312,7 +312,44 @@ function meta_box_langding_page($meta_boxes)
 			),
 		),
 	);
-	
+	$meta_boxes[] = array(
+		'id'         => 'page-faq-meta',
+		'title'      => 'Cấu trúc nội dung',
+		'post_types' => 'page',
+		'include'    => array(
+			'template' => array('template-pages/page-faq.php'),
+		),
+		'fields'     => array(
+			array(
+				'name'        => __('Câu hỏi thường gặp'),
+				'id'          => 'page-faq-group',
+				'type'        => 'group',
+				'clone'       => true,
+				'sort_clone'  => true,
+				'collapsible' => true,
+				'group_title' => array('field' => 'page-faq-title'),
+				'add_button'  => 'Thêm',
+				'fields'      => array(
+					array(
+						'name' => 'Câu hỏi',
+						'id'   => 'page-faq-title',
+						'type' => 'text',
+						'size' => 50,
+					),
+					array(
+						'name'    => 'Câu trả lời',
+						'id'      => 'page-faq-content',
+						'type'    => 'wysiwyg',
+						'raw'     => false,
+						'options' => [
+							'textarea_rows' => 8,
+							'teeny'         => false,
+						],
+					),
+				),
+			),
+		),
+	);
 	$meta_boxes[] = array(
 		'id'          => 'page-basis-meta',
 		'title'       => 'Cấu trúc nội dung',

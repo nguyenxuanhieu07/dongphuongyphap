@@ -11,6 +11,7 @@
 .entry {
 	font-size: 16px;
 	margin-bottom: 50px;
+
 	h2 {
 		font-size: 28px;
 		font-weight: 700;
@@ -39,11 +40,93 @@
 	h3 {
 		margin-bottom: 16px;
 	}
-	ul{
+
+	ul {
 		padding-left: 15px;
 		margin-bottom: 16px;
-		li{
+
+		li {
 			margin-bottom: 16px;
 		}
+	}
+}
+
+.list-symptom {
+	padding: 10px;
+	background: #F5F5F7;
+	border-radius: 10px;
+
+	.form-lable {
+		margin-bottom: 0;
+		font-weight: 500;
+	}
+
+	input {
+		margin-right: 10px;
+	}
+
+	.item-systom {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.post-best-view {
+	padding: 16px;
+	background: #FEF6EA;
+	border-radius: 10px;
+	position: relative;
+
+	.archive-title {
+		font-size: 20px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 15px;
+			background: #048449;
+			left: 0;
+			top: 4px;
+		}
+	}
+
+	.post {
+		display: flex;
+
+		&-thumbnail {
+			height: 84px;
+			aspect-ratio: 125/84;
+			margin-right: 12px;
+			flex-shrink: 0;
+		}
+
+		&-title {
+			font-size: 14px;
+
+			a {
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		background: #F2A82F;
+		height: 20px;
+		width: 100%;
+		bottom: -13px;
+		left: 0;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		z-index: -1;
 	}
 }

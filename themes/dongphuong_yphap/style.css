@@ -225,7 +225,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	height: 229px;
 }
 
-.kksr-legend {
+.post-product .kksr-legend {
 	display: none;
 }
 
@@ -248,16 +248,32 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	border-radius: 5px;
 	flex-shrink: 0;
 }
-.notification .view-cart:hover{
+
+.notification .view-cart:hover {
 	background-color: #048449;
 }
-.dpyp-hide{
+
+.dpyp-hide {
 	opacity: .5;
 	pointer-events: none;
 }
+
 .product-using ul {
 	padding-left: 15px;
 }
-.product-using ul li:not(:last-child){
+
+.product-using ul li:not(:last-child) {
 	margin-bottom: 15px;
+}
+
+.thank-you-text {
+	font-size: 20px;
+}
+
+.page-qa .card-header {
+	padding-top: 0;
+}
+
+.box-doctor-side {
+	align-items: flex-start;
 }

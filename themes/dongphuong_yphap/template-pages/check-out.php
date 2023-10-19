@@ -110,7 +110,7 @@ get_header();
                 </form>
             <?php else: ?>
                 <div class="thank-you">
-                    <h1 class="page-title">Bạn đã đặt hàng thành công !</h1>
+                    <p class="thank-you-text">Bạn đã gửi thông tin thành công, tư vấn viên của chúng tôi sẽ sớm liên hệ lại với bạn. Xin cảm ơn !!!</p>
                    
                     <a href="<?php echo home_url(); ?>" class="btn-home">Quay về trang chủ</a>
                 </div>
