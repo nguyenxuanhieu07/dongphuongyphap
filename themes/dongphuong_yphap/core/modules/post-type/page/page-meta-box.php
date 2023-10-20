@@ -313,6 +313,40 @@ function meta_box_langding_page($meta_boxes)
 		),
 	);
 	$meta_boxes[] = array(
+		'id'         => 'page-activity-meta',
+		'title'      => 'Cấu trúc nội dung',
+		'post_types' => 'page',
+		'include'    => array(
+			'template' => array('template-pages/page-news-activity.php'),
+		),
+		'fields'     => array(
+			array(
+				'name'        => __('Cấu trúc'),
+				'id'          => 'news-activity-option',
+				'type'        => 'group',
+				'clone'       => true,
+				'sort_clone'  => true,
+				'collapsible' => true,
+				'group_title' => array('field' => 'news-activity-select'),
+				'add_button'  => 'Thêm',
+				'fields'      => array(
+					array(
+						'name'        => 'Chuyên mục',
+						'id'          => 'news-activity-select',
+						'type'        => 'taxonomy_advanced',
+						'field_type'  => 'select_advanced',
+						'placeholder' => 'Lựa chọn',
+						'ajax'        => true,
+						'taxonomy'    => 'category',
+						'query_args'  => array(
+							'parent' => 0
+						),
+					),
+				),
+			),
+		),
+	);
+	$meta_boxes[] = array(
 		'id'         => 'page-faq-meta',
 		'title'      => 'Cấu trúc nội dung',
 		'post_types' => 'page',

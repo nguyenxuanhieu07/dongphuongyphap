@@ -25,24 +25,24 @@ if (!function_exists('create_meta_featured_post')) {
 			),
 		);
 
-		//$meta_boxes[] = array(
-		//	'id'         => 'category_setting',
-		//	'title'      => 'Tùy chọn hiển thị',
-		//	'post_types' => array('post'),
-		//	'taxonomies' => array('category'),
-		//	'context'    => 'normal',
-		//	'priority'   => 'high',
-		//	'fields'     => array(
-		//		array(
-		//			'name'        => 'Bác sĩ',
-		//			'id'          => 'specialize-doctor',
-		//			'type'        => 'select_advanced',
-		//			'multiple'    => false,
-		//			'placeholder' => 'Chọn bác sĩ',
-		//			'options'     => $bs_users_array,
-		//		),
-		//	),
-		//);
+		$meta_boxes[] = array(
+			'id'         => 'category_setting',
+			'title'      => 'Tùy chọn hiển thị',
+			'post_types' => array('post'),
+			'taxonomies' => array('category'),
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'fields'     => array(
+				array(
+					'name'        => 'Bác sĩ',
+					'id'          => 'specialize-doctor',
+					'type'        => 'select_advanced',
+					'multiple'    => false,
+					'placeholder' => 'Chọn bác sĩ',
+					'options'     => $bs_users_array,
+				),
+			),
+		);
 		$meta_boxes[] = array(
 			'title'      => 'Cấu trúc nội dung',
 			'post_types' => 'post',

@@ -267,6 +267,7 @@ function hide_editor()
 		'template-pages/check-out.php',
 		'template-pages/contact.php',
 		'template-pages/page-faq.php',
+		'template-pages/page-news-activity.php',
 	);
 	if (in_array($template, $templates_to_hide_editor)) {
 		remove_post_type_support('page', 'editor');

@@ -277,3 +277,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .box-doctor-side {
 	align-items: flex-start;
 }
+a:hover{
+	color: #048449;
+}

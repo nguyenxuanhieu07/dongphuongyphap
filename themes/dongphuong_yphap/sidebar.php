@@ -36,7 +36,7 @@ if (is_author()) {
 			placeholder="Vấn đề đang gặp phải"></textarea>
 	</div>
 	<?php 
-		if(!is_singular(['post','acupoints'])):
+		if(!is_singular(['post','acupoints','page']) && !is_category()):
 	?>
 	<div class="form-group">
 		<label class="form-lable" for="select_basis">Lựa chọn cơ sở *</label>
