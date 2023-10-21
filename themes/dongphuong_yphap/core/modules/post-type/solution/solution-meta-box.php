@@ -1,33 +1,5 @@
 <?php
 add_filter('rwmb_meta_boxes', 'dongphuong_solution_metabox');
-function dongphuong_solution_metabox($meta_boxes)
-{
-	$bs_user        = get_users(array('role' => 'bs'));
-	$bs_users_array = array();
-	foreach ($bs_user as $user) {
-		$bs_users_array[$user->ID] = $user->display_name;
-	}
-	$meta_boxes[] = array(
-		'id'         => 'specialize-options',
-		'title'      => 'Hiện thị thông tin',
-		'taxonomies' => array('specialize'),
-		'context'    => 'normal',
-		'style'      => 'default',
-		'priority'   => 'high',
-		'fields'     => array(
-			array(
-				'name'        => 'Bác sĩ',
-				'id'          => 'specialize-doctor',
-				'type'        => 'select_advanced',
-				'multiple'    => false,
-				'placeholder' => 'Chọn bác sĩ',
-				'options'     => $bs_users_array,
-			),
-		),
-	);
-	return $meta_boxes;
-}
-
 if (!function_exists('dongphuong_solution_setting')) {
 	add_filter('rwmb_meta_boxes', 'dongphuong_solution_setting');
 	function dongphuong_solution_setting($meta_boxes)

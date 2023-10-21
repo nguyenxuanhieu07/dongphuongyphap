@@ -46,3 +46,7 @@ require(__DIR__) . '/user/init.php';
  * user
  */
 require(__DIR__) . '/page/init.php';
+/**
+ * specialize
+ */
+require(__DIR__) . '/specialize/init.php';
