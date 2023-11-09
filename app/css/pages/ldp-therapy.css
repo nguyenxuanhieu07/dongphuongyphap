@@ -1,0 +1,102 @@
+.ladingpage-treatment .breadcrumb {
+  margin-bottom: 50px;
+}
+
+.ladingpage-treatment .page-title {
+  text-transform: uppercase;
+}
+
+.ladingpage-treatment .sapo {
+  margin-bottom: 24px;
+}
+
+.ladingpage-treatment .archive-title {
+  text-transform: none;
+}
+
+.page-qoute {
+  margin-bottom: 50px;
+}
+
+.page-qoute .quote-img {
+  display: block;
+}
+
+.page-qoute .quote-bottom {
+  margin-bottom: 15px;
+}
+
+.page-qoute .quote-bottom {
+  position: relative;
+  left: 95%;
+}
+
+.page-qoute .qoute-item {
+  padding: 15px;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.page-qoute .qoute-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.box-rule {
+  padding: 16px;
+  border-radius: 10px;
+  background: #E6F3ED;
+  margin-bottom: 50px;
+}
+
+.box-rule .title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.box-rule .list-rule {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.box-rule .list-rule .item {
+  width: 26%;
+  margin-bottom: 8px;
+}
+
+.box-rule .list-rule .item img {
+  margin-right: 8px;
+}
+
+.list-method-treatment .inner {
+  margin-bottom: 16px;
+  padding: 21px;
+  background: #E6F3ED;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.list-method-treatment .thumbnail {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.list-method-treatment .thumbnail img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  -o-object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=../maps/pages/ldp-therapy.css.map */

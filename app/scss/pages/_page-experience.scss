@@ -1,16 +1,72 @@
-.page-experience{
-	.box-sapo{
+.page-experience {
+	.box-sapo {
 		width: 75%;
 		text-align: center;
 		margin: 0 auto 50px auto;
 	}
-	.list-video{
+
+	.list-video {
 		margin-bottom: 50px;
 	}
-	.list-story{
+
+	.list-story {
 		margin-bottom: 27px;
-		.post{
+
+		.post {
 			margin-bottom: 23px;
+		}
+	}
+
+	.page-slider {
+		position: relative;
+		background: url('../images/archive/banner-experience.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.page-title {
+		color: $yellow;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.archive-title {
+		margin-bottom: 9px;
+	}
+}
+
+.list-video {
+	.post-title {
+		margin-bottom: 12px;
+	}
+}
+
+.list-images-real {
+	margin-bottom: 50px;
+
+	.item {
+		margin-bottom: 16px;
+		display: flex;
+	}
+
+	.img-right {
+		align-items: end;
+
+		img {
+			width: 358px;
+			aspect-ratio: 358/201;
+		}
+	}
+
+	.img-left {
+		align-items: start;
+		justify-content: end;
+		img {
+			width: 358px;
+			aspect-ratio: 358/201;
+			border-radius: 10px;
 		}
 	}
 }

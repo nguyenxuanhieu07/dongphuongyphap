@@ -83,11 +83,13 @@
 		margin-right: 16px;
 	}
 	.upadate-cart{
-		background: $green;
-		color: $lingt;
+		background: #E6F3ED;
+		color: $green;
 		font-weight: 700;
+		border-radius: 10px;
 		&:hover{
 			background: $yellow;
+			color: $lingt;
 		}
 	}
 	.cart-action{

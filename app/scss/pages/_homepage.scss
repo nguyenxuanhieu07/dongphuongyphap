@@ -29,10 +29,16 @@
 	}
 
 	.section-link-more {
-		text-transform: uppercase;
-		color: $yellow;
+		color: $lingt;
+		background: $green;
+		padding: 8px 15px;
+		border-radius: 20px;
 		font-size: 16px;
 		font-family: 'nunitosan-extrabold';
+
+		&:hover {
+			color: $yellow;
+		}
 	}
 
 }
@@ -70,6 +76,13 @@
 
 	.col-text {
 		margin: auto;
+		background-color: #E6F3ED;
+		border-radius: 10px;
+		padding: 50px 43px 135px 43px;
+	}
+
+	.section-desc {
+		font-weight: 700;
 	}
 
 	.section-img {
@@ -77,8 +90,66 @@
 		aspect-ratio: 23/18;
 	}
 
-	.solution-row {
-		margin-bottom: 45px;
+	.solution-row2 {
+		position: relative;
+		padding: 18px;
+		background: $green;
+		border-radius: 10px;
+		width: 95%;
+		margin: 0 auto;
+		top: -110px;
+		height: 224px;
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-end;
+
+		.box-solution {
+			.box-img {
+				display: flex;
+				width: 87px;
+				height: 87px;
+				border-radius: 50%;
+				background: #9BCEB6;
+				border: 1px solid #fff;
+				align-items: center;
+				justify-content: space-around;
+				margin-bottom: 15px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			&:nth-child(2) {
+				.box-img {
+					background: #68B592;
+				}
+			}
+
+			&:nth-child(3) {
+				.box-img {
+					background: #369D6D;
+				}
+			}
+
+			&:nth-child(4) {
+				.box-img {
+					background: #048449;
+				}
+			}
+
+			&:nth-child(5) {
+				.box-img {
+					background: #036A3A;
+				}
+			}
+		}
+
+		.title {
+			font-size: 26px;
+			font-weight: 700;
+			color: $lingt;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -206,6 +277,20 @@
 			color: $lingt;
 		}
 	}
+
+	@media (max-width: 575px) {
+		.section-desc {
+			width: 100%;
+		}
+
+		.slick-track {
+			left: 60px;
+
+			img {
+				display: inline;
+			}
+		}
+	}
 }
 
 .home-difference {
@@ -241,6 +326,10 @@
 
 .home-expert {
 	margin-bottom: 50px;
+
+	.slick-track {
+		left: 100px;
+	}
 
 	.slick-prev {
 		width: 25px;
@@ -279,6 +368,10 @@
 
 .home-disease {
 	margin-bottom: 26px;
+
+	.home-list-disease {
+		position: relative;
+	}
 
 	.section-title {
 		margin-bottom: 12px;
@@ -324,6 +417,16 @@
 		&:hover {
 			box-shadow: 0 0 15px rgba($color: #048449, $alpha: 0.2);
 			background: $lingt;
+		}
+	}
+
+	.item-hide {
+		display: none;
+	}
+
+	@media (max-width:575px) {
+		.section-desc {
+			max-width: 100%;
 		}
 	}
 }

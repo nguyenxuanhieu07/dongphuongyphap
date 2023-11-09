@@ -24,18 +24,28 @@
 	border-radius: 10px;
 	padding: 24px 26px;
 	margin-bottom: 65px;
-	display: flex;
+	//display: flex;
 
 	.list-part {
 		list-style: none;
 		padding-left: 0;
 		margin-bottom: 0;
 		padding-top: 10px;
+		width: 100%;
 	}
 
 	.item {
+		padding: 10px;
+
 		&:not(:last-child) {
-			margin-bottom: 16px;
+			margin-bottom: 0;
+		}
+
+		&:hover {
+			background: #F5F5F7;
+			padding: 10px;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 8px;
 		}
 	}
 
@@ -52,5 +62,71 @@
 		border-radius: 50%;
 		background: #E6F3ED;
 		margin-right: 14px;
+	}
+
+	.acument-point {
+		padding: 0;
+	}
+
+	.acument-result {
+		background: #F5F5F7;
+		padding: 0;
+		border-radius: 8px;
+	}
+
+	.list-result {
+		padding: 24px 30px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.result-item {
+			width: 45%;
+			margin-bottom: 0;
+			border-bottom: 1px solid #EAECEF;
+			padding: 10px 0;
+		}
+
+		a {
+			font-weight: 500;
+			font-size: 18px;
+			color: $green;
+
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+
+	.active {
+		background: #F5F5F7;
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+
+	.pagination-nav {
+		display: flex;
+		justify-content: center;
+		.pagination{
+			margin-bottom: 26px;
+		}
+		.page-numbers {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 1.8;
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		.current {
+			border: 1px solid $green;
+			border-radius: 50px;
+		}
+	}
+	@media (max-width:575px) {
+		.acument-result {
+			display: none;
+		}
 	}
 }

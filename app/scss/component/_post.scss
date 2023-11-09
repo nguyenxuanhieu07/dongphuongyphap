@@ -1,9 +1,10 @@
 .post {
-
 	&-thumbnail {
-		max-width: 100%;
+		position: relative;
+		width: 100%;
+		height: 100%;
 		aspect-ratio: 261/155;
-		margin-bottom: 8px;
+		margin-bottom: 16px;
 		border-radius: 10px;
 		overflow: hidden;
 		display: block;
@@ -14,6 +15,45 @@
 			-o-object-position: 50% 50%;
 			width: 100%;
 			height: 100%;
+		}
+	}
+
+	&-video {
+		.post-thumbnail {
+			position: relative;
+
+			&::after {
+				content: '';
+				background: url('../images/icons/icon-youtobe.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				aspect-ratio: 38/21;
+				width: 114px;
+				top: 40%;
+				left: 40%;
+			}
+		}
+
+		&-side {
+			display: flex;
+
+			.post-thumbnail {
+				width: 261px;
+				aspect-ratio: 261/146;
+				flex-shrink: 0;
+				margin-right: 16px;
+				margin-bottom: 0;
+
+				&::after {
+					content: '';
+					aspect-ratio: 62/35;
+					width: 62px;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
 		}
 	}
 
@@ -47,6 +87,8 @@
 		}
 	}
 }
+
+
 
 .post-doctor {
 	border-radius: 12px;
@@ -288,6 +330,7 @@
 		flex-shrink: 0;
 		margin: auto 0;
 		text-align: center;
+
 		.link {
 			display: block;
 			padding: 8px 28px;
