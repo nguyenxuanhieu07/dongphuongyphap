@@ -1,6 +1,10 @@
 .page-basis {
 
 	.page-slider {
+		background: url('../images/archive/banner-basis.png') no-repeat;
+		background-size: cover;
+		background-color: $green;
+
 		.page-title {
 			color: $lingt;
 			padding-top: 100px;
@@ -29,6 +33,40 @@
 			margin-bottom: 5px;
 		}
 	}
+	.list-cta{
+		margin-bottom: 50px;
+	}
+	@media (max-width:575px) {
+		.page-slider {
+			background: url('../images/archive/banner-basis-mb.png') no-repeat;
+			background-size: cover;
+			background-color: $green;
+		}
+		.list-doctor{
+			position: relative;
+			.post-doctor{
+				flex-wrap: wrap;
+				width: 80%;
+				margin-right: auto;
+				margin-left: auto;
+				justify-content: center;
+				background: $lingt;
+			}
+			.post-action{
+				margin-bottom: 16px;
+			}
+			.link{
+				padding: 8px 63px;
+			}
+			.link-more{
+				margin-bottom: 8px;
+			}
+			.post-name,
+			.post-position{
+				text-align: center;
+			}
+		}
+	}
 }
 
 .basis-infrastructure {
@@ -42,6 +80,7 @@
 	.list-infrastructure {
 		margin-bottom: 50px;
 		padding-right: 15px;
+
 		.inner {
 			height: 147px;
 			background: #E6F3ED;
@@ -50,7 +89,7 @@
 	}
 
 	.slick-track {
-		left: -150px;
+		left: -210px;
 	}
 
 	.slick-prev {
@@ -90,7 +129,7 @@
 
 .list-reviews {
 	margin-bottom: 50px;
-
+	position: relative;
 	.review {
 		padding: 16px;
 		background: #FAFAFB;
@@ -130,6 +169,10 @@
 				height: 20px;
 			}
 		}
+	}
+
+	.item-hide {
+		display: none;
 	}
 }
 
@@ -180,29 +223,39 @@
 		font-weight: 700;
 		display: flex;
 		align-items: baseline;
-		.fa{
+
+		.fa {
 			margin-right: 12px;
 		}
 	}
-	.multi-collapse{
+
+	.multi-collapse {
 		padding: 16px;
-		.number-phone{
+
+		.number-phone {
 			color: $lingt;
 			font-weight: 700;
 			margin-bottom: 18px;
 			display: block;
-			.fa{
+
+			.fa {
 				color: $yellow;
 				margin-right: 8px;
 				font-size: 15px;
 			}
 		}
-		.btn-book{
+
+		.btn-book {
 			padding: 8px 17px;
 			color: $lingt;
 			background: $yellow;
 			font-weight: 700;
 			border-radius: 20px;
+		}
+	}
+	@media (max-width:575px) {
+		.map-address{
+			width: 191px;
 		}
 	}
 }

@@ -1,28 +1,52 @@
-.single-treatment{
-	.entry{
+.single-treatment {
+	.entry {
 		margin-bottom: 50px;
 	}
-	.list-doctor{
+
+	.list-doctor {
 		margin-bottom: 50px;
 	}
-	.list-treatment{
+
+	.list-treatment {
 		margin-bottom: 50px;
-		.inner{
+
+		.inner {
 			background: #E6F3ED;
-			&:hover{
+
+			&:hover {
 				background-color: $lingt;
 				box-shadow: 0 0 15px rgba($color: #048449, $alpha: 0.2);
 			}
 		}
 	}
+
+	.breadcrumb {
+		margin-bottom: 50px;
+	}
 }
-.list-post-author{
+
+.list-post-author {
 	margin-bottom: 50px;
-	.post{
+
+	.post {
 		margin-bottom: 12px;
 	}
-	.post-thumbnail{
+
+	.post-thumbnail {
 		aspect-ratio: 230/139;
 		margin-bottom: 16px;
+	}
+
+	@media (max-width:575px) {
+		.post {
+			display: flex;
+		}
+
+		.post-thumbnail {
+			width: 150px;
+			aspect-ratio: 25/17;
+			flex-shrink: 0;
+			margin-right: 16px;
+		}
 	}
 }

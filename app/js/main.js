@@ -4,6 +4,8 @@ var home_slider={
 		home_slider.slider_solution();
 		home_slider.slider_feedback();
 		home_slider.slider_expert();
+		home_slider.slider_newpaper();
+		home_slider.slider_partner();
 	},
 	slider_solution: function() {
 		var list_slide=$('.home-slide-solution .list-solution'),
@@ -63,8 +65,8 @@ var home_slider={
 					{
 						breakpoint: 575,
 						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2,
+							slidesToShow: 1.8,
+							slidesToScroll: 1,
 							infinite: true,
 							dots: true,
 							centerMode: false,
@@ -101,6 +103,90 @@ var home_slider={
 			});
 		}
 	},
+	slider_newpaper: function() {
+		var list_slide=$('.home-newspaper .list-newspaper'),
+			item=$('.home-newspaper .list-newspaper .newspaper-item');
+		if(list_slide.length>0&&item.length>4) {
+			list_slide.slick({
+				dots: false,
+				arrow: true,
+				speed: 1000,
+				// autoplay: true,
+				autoplaySpeed: 3000,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				responsive: [
+					{
+						breakpoint: 575,
+						settings: {
+							slidesToShow: 1.5,
+							slidesToScroll: 1,
+							infinite: true,
+							dots: true,
+							centerMode: false,
+							arrows: false,
+						},
+					},
+				],
+			});
+		} else {
+			list_slide.slick({
+				slidesToShow: 1.5,
+				slidesToScroll: 1,
+				mobileFirst: true,
+				arrows: true,
+				dots: false,
+				responsive: [
+					{
+						breakpoint: 575,
+						settings: "unslick",
+					},
+				],
+			});
+		}
+	},
+	slider_partner: function() {
+		var list_slide=$('.home-partner .list-logo-partner'),
+			item=$('.home-partner .list-logo-partner .inner');
+		if(list_slide.length>0&&item.length>4) {
+			list_slide.slick({
+				dots: false,
+				arrow: true,
+				speed: 1000,
+				// autoplay: true,
+				autoplaySpeed: 3000,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				responsive: [
+					{
+						breakpoint: 575,
+						settings: {
+							slidesToShow: 1.5,
+							slidesToScroll: 1,
+							infinite: true,
+							dots: true,
+							centerMode: false,
+							arrows: false,
+						},
+					},
+				],
+			});
+		} else {
+			list_slide.slick({
+				slidesToShow: 1.5,
+				slidesToScroll: 1,
+				mobileFirst: true,
+				arrows: true,
+				dots: false,
+				responsive: [
+					{
+						breakpoint: 575,
+						settings: "unslick",
+					},
+				],
+			});
+		}
+	}
 }
 var page_slider={
 	init: function() {
@@ -110,6 +196,7 @@ var page_slider={
 		page_slider.list_gallery();
 		page_slider.list_product();
 		page_slider.list_adive_bottom();
+		page_slider.list_products_archive();
 	},
 	list_infrastructure: function() {
 		var list_slide=$('.basis-infrastructure .list-infrastructure'),
@@ -182,8 +269,8 @@ var page_slider={
 					{
 						breakpoint: 575,
 						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2,
+							slidesToShow: 4,
+							slidesToScroll: 4,
 							infinite: true,
 							dots: true,
 							centerMode: false,
@@ -211,10 +298,10 @@ var page_slider={
 					{
 						breakpoint: 575,
 						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2,
+							slidesToShow: 1,
+							slidesToScroll: 1,
 							infinite: true,
-							dots: true,
+							dots: false,
 							centerMode: false,
 							arrows: false,
 						},
@@ -251,6 +338,26 @@ var page_slider={
 			});
 		}
 	},
+	list_products_archive: function() {
+		var list_slide=$('.list-products'),
+			item=$('.list-products .post-product');
+		if(list_slide.length>0&&item.length>3) {
+			list_slide.slick({
+				slidesToShow: 1.5,
+				slidesToScroll: 1,
+				mobileFirst: true,
+				arrows: true,
+				dots: false,
+				responsive: [
+					{
+						breakpoint: 575,
+						settings: "unslick",
+					},
+				],
+			});
+		}
+
+	}
 }
 var collpase_js={
 	init: function() {
@@ -714,6 +821,21 @@ var home_action={
 		}
 	}
 }
+var langdingpage_action={
+	init: function() {
+		langdingpage_action.showview_basis();
+	},
+	showview_basis: function() {
+		var btn_more=$('.list-reviews .btn-more');
+		if(btn_more.length>0) {
+			btn_more.on('click',function() {
+				$('.list-reviews .review').removeClass('item-hide');
+				$('.list-cta').hide();
+				return false;
+			});
+		}
+	}
+}
 jQuery(document).ready(function() {
 	//slider
 	home_slider.init();
@@ -727,4 +849,5 @@ jQuery(document).ready(function() {
 	acupoint_function.init();
 	ajax_author.init();
 	home_action.init();
+	langdingpage_action.init();
 });

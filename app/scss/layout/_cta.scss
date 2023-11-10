@@ -20,4 +20,10 @@
 		width: 50px;
 		aspect-ratio: 1;
 	}
+	@media (max-width:575px) {
+		left: 15px;
+		&-action {
+			padding-left: 0;
+		}
+	}
 }
