@@ -123,4 +123,13 @@
 			background: $green;
 		}
 	}
+	@media (max-width:575px) {
+		.table-cart{
+			overflow: scroll;
+			margin-bottom: 15px;
+		}
+		.cart{
+			width: 700px;
+		}
+	}
 }

@@ -1,9 +1,11 @@
-.list-disease{
+.list-disease {
 	margin-bottom: 50px;
-	.disease-item{
+
+	.disease-item {
 		margin-bottom: 16px;
 	}
-	.disease-inner{
+
+	.disease-inner {
 		padding: 12px;
 		background: #E6F3ED;
 		border-radius: 10px;
@@ -11,28 +13,77 @@
 		height: 100%;
 	}
 
-	.inner-title{
+	.inner-title {
 		font-size: 16px;
 		font-weight: 700;
 		margin-bottom: 0;
 	}
-	.inner-img{
+
+	.inner-img {
 		margin-right: 14px;
 		flex-shrink: 0;
 	}
 }
-.disease-content{
+
+.disease-content {
 	margin-bottom: 50px;
-	p{
+
+	p {
 		margin-bottom: 50px;
 	}
-	img{
+
+	img {
 		display: block;
 		margin: 0 auto;
 	}
 }
-.archive-disease{
-	.list-doctor{
+
+.archive-disease {
+	.list-doctor {
 		margin-bottom: 50px;
+	}
+}
+
+.slide-content {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	text-align: center;
+	transform: translateY(25%);
+
+	.title {
+		color: #FEFDBC;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 32px;
+		margin-bottom: 12px;
+	}
+
+	.list {
+		display: flex;
+
+		.item {
+			color: $lingt;
+			font-size: 18px;
+			font-weight: 700;
+			margin-right: 16px;
+			padding-right: 16px;
+
+			&:first-child {
+				&::marker {
+					color: transparent;
+				}
+			}
+		}
+	}
+
+	@media (max-width:575px) {
+		left: 7%;
+		top: 10%;
+
+		.list {
+			list-style: none;
+			display: block;
+		}
 	}
 }

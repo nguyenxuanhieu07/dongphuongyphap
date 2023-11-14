@@ -20,34 +20,55 @@
 </head>
 
 <body class="">
-	<header>
+	<header class="page-header">
 		<div class="container">
 			<div class="header-logo">
 				<div class="logo">
 					<img src="images/logo.png" alt="" class="header-img">
 				</div>
-				<div class="header-cta">
+				<div class="header-cta d-none d-md-flex">
+					<form action="" class="form-header-search">
+						<input type="text" name="s" class="inp-search form-control d-none d-md-block"
+							placeholder="Tìm kiếm...">
+						<button class="header-btn-search form-control">
+							<i class="fa fa-search"></i>
+						</button>
+					</form>
+					<a href="#" class="header-cta-link">
+						<img src="images/icons/calender.png" alt="" class="header-img d-none d-md-block">
+						<span class="header-cta-text d-none d-md-block">Đặt lịch khám</span>
+					</a>
+					<div class="mini-cart">
+						<img src="images/icons/icon_cart.png" alt="" class="img-cart">
+						<p class="number-cart">0</p>
+						<div class="mini-cart-content d-none">
+							<p class="cart-notice">Chưa có sản phẩm nào trong giỏ hàng</p>
+						</div>
+					</div>
+				</div>
+				<div class="header-cta-mb d-flex d-md-none">
+					<a href="#" class="cta-item btn-search">
+						<i class="fa fa-search"></i>
+					</a>
+					<a href="#" class="cta-item">
+						<img src="images/icons/calender-mb.png" alt="" class="header-img d-block d-md-none">
+					</a>
+					<a href="#" class="cta-item">
+						<img src="images/icons/icon_cart.png" alt="" class="img-cart">
+					</a>
+					<a href="#" class="cta-item btn-menu">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+					</a>
 					<form action="" class="form-header-search">
 						<input type="text" name="s" class="inp-search form-control" placeholder="Tìm kiếm...">
 						<button class="header-btn-search form-control">
 							<i class="fa fa-search"></i>
 						</button>
 					</form>
-					<a href="#" class="header-cta-link">
-						<img src="images/icons/calender.png" alt="" class="header-img">
-						<span class="header-cta-text">Đặt lịch khám</span>
-					</a>
-					<div class="mini-cart">
-						<img src="images/icons/icon_cart.png" alt="" class="img-cart">
-						<p class="number-cart">0</p>
-						<div class="mini-cart-content">
-							<p class="cart-notice">Chưa có sản phẩm nào trong giỏ hàng</p>
-						</div>
-					</div>
 				</div>
 			</div>
 			<nav class="navbar navbar-expand-md primary-nav menu-header">
-				<div class="collapse navbar-collapse collapse-primary" id="primary-nav-collapse">
+				<div class="navbar-collapse collapse-primary" id="primary-nav-collapse">
 					<ul id="menu-menu-top" class="navbar-nav main-menu">
 						<li id="nav-item-267" class="nav-item menu-item">
 							<a href="#" class="nav-link">Trang chủ</a>
@@ -110,80 +131,84 @@
 				<form action="" class="form-cart">
 					<div class="row">
 						<div class="col-md-8">
-							<div class="cart">
-								<div class="cart-thead">
-									<div class="thead-item product-remove"></div>
-									<div class="thead-item product-thumbnail"></div>
-									<div class="thead-item product-name">Sản phẩm</div>
-									<div class="thead-item product-price">Giá</div>
-									<div class="thead-item cart-quantity">Số lượng</div>
-									<div class="thead-item product-total-price">Tạm tính</div>
-								</div>
-								<div class="cart-content">
-									<div class="cart-item">
-										<div class="product-remove">
-											<a href="#" class="remove">
-												<i class="fa fa-trash" aria-hidden="true"></i>
-											</a>
-										</div>
-										<div class="product-thumbnail">
-											<a href="#" class="cart-image">
-												<img src="images/product/product-img.png" alt="">
-											</a>
-										</div>
-										<div class="product-name">
-											<a href="#">
-												Viên uống tinh dầu hoa anh thảo Blackmores - Evening Primrose Oil cân bằng
-												nội tiết tố nữ
-											</a>
-										</div>
-										<div class="product-price">
-											<span class="price-item">455.000đ</span>
-										</div>
-										<div class="cart-quantity">
-											<div class="product-quantity">
-												<span class="quantity-minus">-</span>
-												<input type="number" value="1" class="input-quantity" min="1">
-												<span class="quantity-plus">+</span>
+							<div class="table-cart">
+								<div class="cart">
+									<div class="cart-thead">
+										<div class="thead-item product-remove"></div>
+										<div class="thead-item product-thumbnail"></div>
+										<div class="thead-item product-name">Sản phẩm</div>
+										<div class="thead-item product-price">Giá</div>
+										<div class="thead-item cart-quantity">Số lượng</div>
+										<div class="thead-item product-total-price">Tạm tính</div>
+									</div>
+									<div class="cart-content">
+										<div class="cart-item">
+											<div class="product-remove">
+												<a href="#" class="remove">
+													<i class="fa fa-trash" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="product-thumbnail">
+												<a href="#" class="cart-image">
+													<img src="images/product/product-img.png" alt="">
+												</a>
+											</div>
+											<div class="product-name">
+												<a href="#">
+													Viên uống tinh dầu hoa anh thảo Blackmores - Evening Primrose Oil cân
+													bằng
+													nội tiết tố nữ
+												</a>
+											</div>
+											<div class="product-price">
+												<span class="price-item">455.000đ</span>
+											</div>
+											<div class="cart-quantity">
+												<div class="product-quantity">
+													<span class="quantity-minus">-</span>
+													<input type="number" value="1" class="input-quantity" min="1">
+													<span class="quantity-plus">+</span>
+												</div>
+											</div>
+											<div class="product-total-price">
+												<span class="total-price">455.000đ</span>
 											</div>
 										</div>
-										<div class="product-total-price">
-											<span class="total-price">455.000đ</span>
-										</div>
-									</div>
-									<div class="cart-item">
-										<div class="product-remove">
-											<a href="#" class="remove">
-												<i class="fa fa-trash" aria-hidden="true"></i>
-											</a>
-										</div>
-										<div class="product-thumbnail">
-											<a href="#" class="cart-image">
-												<img src="images/product/product-img.png" alt="">
-											</a>
-										</div>
-										<div class="product-name">
-											<a href="#">
-												Viên uống tinh dầu hoa anh thảo Blackmores - Evening Primrose Oil cân bằng
-												nội tiết tố nữ
-											</a>
-										</div>
-										<div class="product-price">
-											<span class="price-item">455.000đ</span>
-										</div>
-										<div class="cart-quantity">
-											<div class="product-quantity">
-												<span class="quantity-minus">-</span>
-												<input type="number" value="1" class="input-quantity" min="1">
-												<span class="quantity-plus">+</span>
+										<div class="cart-item">
+											<div class="product-remove">
+												<a href="#" class="remove">
+													<i class="fa fa-trash" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="product-thumbnail">
+												<a href="#" class="cart-image">
+													<img src="images/product/product-img.png" alt="">
+												</a>
+											</div>
+											<div class="product-name">
+												<a href="#">
+													Viên uống tinh dầu hoa anh thảo Blackmores - Evening Primrose Oil cân
+													bằng
+													nội tiết tố nữ
+												</a>
+											</div>
+											<div class="product-price">
+												<span class="price-item">455.000đ</span>
+											</div>
+											<div class="cart-quantity">
+												<div class="product-quantity">
+													<span class="quantity-minus">-</span>
+													<input type="number" value="1" class="input-quantity" min="1">
+													<span class="quantity-plus">+</span>
+												</div>
+											</div>
+											<div class="product-total-price">
+												<span class="total-price">455.000đ</span>
 											</div>
 										</div>
-										<div class="product-total-price">
-											<span class="total-price">455.000đ</span>
+										<div class="cart-action">
+											<button type="submit" class="btn upadate-cart">Cập nhật giỏ hàng</button>
 										</div>
-									</div>
-									<div class="cart-action">
-										<button type="submit" class="btn upadate-cart">Cập nhật giỏ hàng</button>
 									</div>
 								</div>
 							</div>
