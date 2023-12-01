@@ -24,12 +24,10 @@
 	}
 
 	.quote-bottom {
-		margin-bottom: 15px;
-	}
-
-	.quote-bottom {
 		position: relative;
-		left: 95%;
+		margin-bottom: 15px;
+		left: 100%;
+		transform: translateX(-100%);
 	}
 
 	.qoute-item {
@@ -43,6 +41,21 @@
 
 		&:not(:last-child) {
 			margin-bottom: 16px;
+		}
+	}
+
+	@media (max-width:575px) {
+		.quote-bottom {
+			margin-right: 0;
+		}
+
+		.quote-img {
+			margin-bottom: 16px;
+		}
+
+		.qoute-item {
+			margin-bottom: 16px;
+			width: 100%;
 		}
 	}
 }
@@ -322,6 +335,7 @@
 		border-radius: 10px;
 		margin-bottom: 16px;
 		background: $lingt;
+
 		.number {
 			font-size: 26px;
 			font-weight: 700;

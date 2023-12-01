@@ -6,7 +6,7 @@
 	.form-title {
 		font-size: 20px;
 		color: $green;
-		font-family: 'nunitosan-extrabold';
+		font-weight: 800;
 		text-transform: uppercase;
 		margin-bottom: 13px;
 	}
@@ -14,7 +14,7 @@
 	.form-desc {
 		font-size: 16px;
 		line-height: 1.5;
-		font-family: 'nunitosan-semmibold';
+		font-weight: 700;
 		margin-bottom: 24px;
 	}
 
@@ -151,7 +151,7 @@
 
 	.benefits-title {
 		font-size: 20px;
-		font-family: 'nunitosan-extrabold';
+		font-weight: 800;
 		text-transform: uppercase;
 		color: $lingt;
 		background: $green;
@@ -167,7 +167,7 @@
 
 	.entry-title {
 		margin-bottom: 6px;
-		font-family: 'nunitosan-semmibold';
+		font-weight: 700;
 	}
 
 	.list-benefits {
