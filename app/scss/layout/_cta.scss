@@ -1,29 +1,109 @@
-.cta {
+.cta-action {
 	position: fixed;
-	z-index: 10;
-	left: 15px;
-	right: auto;
-	bottom: 120px;
+	top: 70%;
+	left: 30px;
+	display: flex;
+	flex-direction: column;
+	z-index: 5;
 
-	&-action {
-		list-style: none;
-		padding-left: 50px;
+	.cta-link {
+		margin-bottom: 10px;
+	}
+}
 
-		.item {
-			&:not(:last-child) {
-				margin-bottom: 12px;
-			}
-		}
+.animation {
+	position: relative;
+
+	.phone {
+		display: block;
+		animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
 	}
 
-	.cta-img {
-		width: 50px;
-		aspect-ratio: 1;
+	.coccoc-alo-ph-circle-fill {
+		width: 70px;
+		height: 70px;
+		top: -10px;
+		left: -10px;
+		border-radius: 50%;
+		background-color: rgba($color: #F2A82F, $alpha: .5);
+		opacity: .75 !important;
+		position: absolute;
+		// transform: translate3d(-14%, -15%, 0);
+		animation: coccoc-alo-circle-fill-anim 2.3s infinite ease-in-out;
 	}
-	@media (max-width:575px) {
-		left: 15px;
-		&-action {
-			padding-left: 0;
-		}
+
+	.coccoc-alo-ph-circle {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		background-color: transparent;
+		top: -25px;
+		left: -25px;
+		border-radius: 50%;
+		border: 2px solid rgba($color: #F2A82F, $alpha: .5);
+		animation: coccoc-alo-circle-anim 2.2s infinite ease-in-out;
+	}
+}
+@keyframes coccoc-alo-circle-anim {
+	0% {
+		transform: rotate(0) scale(.5) skew(1deg);
+		opacity: .1
+	}
+
+	30% {
+		transform: rotate(0) scale(.7) skew(1deg);
+		opacity: .5
+	}
+
+	100% {
+		transform: rotate(0) scale(1) skew(1deg);
+		opacity: .1
+	}
+}
+
+@keyframes coccoc-alo-circle-fill-anim {
+	0% {
+		transform: rotate(0) scale(.7) skew(1deg);
+		opacity: .2
+	}
+
+	50% {
+		transform: rotate(0) scale(1) skew(1deg);
+		opacity: .2
+	}
+
+	100% {
+		transform: rotate(0) scale(.7) skew(1deg);
+		opacity: .2
+	}
+}
+
+@keyframes coccoc-alo-circle-img-anim {
+	0% {
+		transform: rotate(0) scale(1) skew(1deg)
+	}
+
+	10% {
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	}
+
+	20% {
+		transform: rotate(25deg) scale(1) skew(1deg)
+	}
+
+	30% {
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	}
+
+	40% {
+		transform: rotate(25deg) scale(1) skew(1deg)
+	}
+
+	50% {
+		transform: rotate(0) scale(1) skew(1deg)
+	}
+
+	100% {
+		transform: rotate(0) scale(1) skew(1deg)
 	}
 }

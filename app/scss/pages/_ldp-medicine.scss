@@ -120,16 +120,11 @@
 
 .list-medicine-bottom {
 	margin-bottom: 50px;
-
-	.item {
-		height: 100%;
-	}
-
 	.inner {
 		background: $green;
 		padding: 16px;
 		border-radius: 10px;
-
+		height: 100%;
 		&-title {
 			font-size: 18px;
 			color: #fff;
@@ -171,7 +166,7 @@
 			margin-bottom: 16px;
 			display: flex;
 			align-items: center;
-
+			height: auto;
 			&-img {
 				width: 128px;
 				margin-bottom: 0;
@@ -270,7 +265,7 @@
 	}
 }
 
-.list-rule {
+.list-rule2 {
 	.inner {
 		border-radius: 10px;
 		overflow: hidden;
