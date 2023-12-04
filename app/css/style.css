@@ -1650,6 +1650,10 @@ a:hover {
   margin: 0 auto 24px auto;
 }
 
+.home-slide-solution .solution-item {
+  padding: 0 12px;
+}
+
 .home-slide-solution .inner {
   border-radius: 10px;
   background: #048449;
@@ -1680,6 +1684,7 @@ a:hover {
   font-family: 'chuck-noon';
   margin-bottom: 0;
   line-height: normal;
+  padding: 0 8px;
 }
 
 .home-slide-solution .inner-title .link {
