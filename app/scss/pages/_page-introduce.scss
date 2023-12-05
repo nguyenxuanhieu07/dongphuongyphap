@@ -37,6 +37,28 @@
 		}
 	}
 
+	.box-text {
+		padding: 21px 15px;
+		background: $green;
+		color: #fff;
+		border-radius: 10px;
+		width: 80%;
+		margin: 0 auto 50px auto;
+		font-size: 18px;
+
+		p {
+			margin-bottom: 0;
+
+			b {
+				color: #FEFDBC;
+			}
+		}
+
+		@media (max-width:575px) {
+			width: 100%;
+		}
+	}
+
 	@media (max-width:575px) {
 		.list-expert {
 			.item {
@@ -210,27 +232,6 @@
 	}
 }
 
-.box-text {
-	padding: 21px 15px;
-	background: $green;
-	color: #fff;
-	border-radius: 10px;
-	width: 80%;
-	margin: 0 auto 50px auto;
-	font-size: 18px;
-
-	p {
-		margin-bottom: 0;
-
-		b {
-			color: #FEFDBC;
-		}
-	}
-
-	@media (max-width:575px) {
-		width: 100%;
-	}
-}
 
 .banner-introduce2 {
 	margin-bottom: 50px;

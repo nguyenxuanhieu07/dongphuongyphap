@@ -1,0 +1,74 @@
+.banner-solution {
+	background: url('../images/archive/banner-he-giai-phap.jpg') no-repeat;
+	background-size: cover;
+	height: 250px;
+	margin-bottom: 50px;
+
+	.text-banner {
+		text-align: center;
+		color: $lingt;
+		padding: 0 175px;
+		transform: translateY(50%);
+
+		.page-title {
+			font-size: 32px;
+			font-weight: 700;
+			color: $lingt;
+			margin-bottom: 5px;
+		}
+
+		.title-child {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width:575px) {
+		.text-banner {
+			padding: 0;
+			height: 250px;
+			transform: translateY(45%);
+		}
+
+		.title-child {
+			display: none;
+		}
+	}
+}
+
+.archive-list-solution {
+	.item-solution {
+		padding: 16px;
+		border-radius: 10px;
+		border: 1px solid #E8E8E8;
+		margin-bottom: 50px;
+
+		&:nth-child(even) {
+			background: #E6F3ED;
+		}
+
+	}
+
+	.list-content {
+		padding-left: 15px;
+		margin-bottom: 23px;
+
+		.item {
+			font-size: 16px;
+
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.link-more {
+		padding: 5px 10px;
+		color: $lingt;
+		font-weight: 700;
+		font-size: 16px;
+		background: #048449;
+		border-radius: 10px;
+		display: inline-block;
+		line-height: 1.4;
+	}
+}

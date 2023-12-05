@@ -1,35 +1,94 @@
-.archive-doctors{
-	.page-title{
+.archive-doctors {
+	.page-title {
 		text-transform: uppercase;
 		color: $lingt;
-		padding-top: 100px;
-		.title-child{
+
+		.title-child {
 			display: block;
 			text-transform: none;
 			font-weight: 500;
 		}
 	}
-	.entry{
+
+	.entry {
 		margin-bottom: 24px;
 	}
-	.list-doctor{
+
+	.list-doctor {
 		margin-bottom: 65px;
 	}
 }
-.list-numbers{
+
+.list-numbers {
 	margin-bottom: 50px;
 	text-align: center;
-	.numbers-text{
+
+	.numbers-text {
 		font-size: 28px;
 		font-weight: 700;
 		font-size: 28px;
 		margin-bottom: 0;
 	}
-	.numbers-title{
+
+	.numbers-title {
 		font-weight: 700;
 		color: $green;
 		font-size: 80px;
 		margin-bottom: 0;
 		line-height: 1.1;
+	}
+}
+
+.banner-user {
+	background: url('../images/archive/banner-user.jpg') no-repeat;
+	background-size: cover;
+	height: auto;
+	margin-bottom: 50px;
+	position: relative;
+
+	.page-title {
+		font-size: 32px;
+		color: #FEFDBC;
+		text-shadow: 0 0 10px #005E33;
+		font-weight: 700;
+		margin-bottom: 0;
+		white-space: nowrap;
+	}
+
+	.title-child {
+		font-size: 42px;
+		color: $lingt;
+		font-family: 'chuck-noon';
+		margin-bottom: 0;
+	}
+
+	.text-banner {
+		text-align: center;
+		padding-top: 24px;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.banner-img {
+		width: 100%;
+		aspect-ratio: 535/250;
+	}
+
+	@media (max-width:575px) {
+		.banner-img {
+			width: 100%;
+			aspect-ratio: 425/198;
+			position: relative;
+			margin-left: -20px;
+		}
+
+		.title-child {
+			font-size: 30px;
+		}
+
+		.page-title {
+			white-space: inherit;
+		}
 	}
 }
